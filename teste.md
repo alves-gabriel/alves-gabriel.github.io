@@ -4,6 +4,12 @@ title: Testeaaa
 
 # Teste
 
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
 ![Adlet](./assets/adlet.jpg)
 
 First Header | Second Header
