@@ -1,4 +1,4 @@
-## Some stuff that I wrote
+## Stuff I wrote
 
 ****
 
