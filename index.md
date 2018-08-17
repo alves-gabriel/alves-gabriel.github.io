@@ -1,12 +1,23 @@
-## Welcome to GitHub Pages
+# Under construction
 
-# Teste
-## do
-### Github
+My [CV Lattes](http://lattes.cnpq.br/8556653249943418)
 
-You can use the [editor on GitHub](https://github.com/alves-gabriel/galves.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Some stuff that I wrote
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### In Portuguese:
+
+- Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig :
+
+- Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto) :
+
+- Algumas notas sobre Mecânica Lagrangiana e Hamiltoniana:
+
+- Algumas notas sobre tensores:
+
+- Uma breve introdução ao TikZ:
+
+### In English:
+
 
 ### Markdown
 
