@@ -4,7 +4,7 @@ title: Testeaaa
 
 # Teste
 
-[Adlet](./assets/adlet.jpg)
+![Adlet](./assets/adlet.jpg)
 
 First Header | Second Header
 ------------ | -------------
