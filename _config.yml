@@ -4,5 +4,8 @@ description: Link[Home Page](/README.md) <br>
 Materials <br>
 Misc <br>
 future: true
+header_pages:
+  - README.md
+  - teste.md
 github:
   is_project_page: false
