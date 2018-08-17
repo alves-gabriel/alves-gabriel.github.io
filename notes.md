@@ -16,5 +16,5 @@
 
 ### In English:
 
-- [D'inverno Solutions (In](./assets/D_Inverno_Solutions.pdf)
+- [D'inverno Solutions (Incomplete)](./assets/D_Inverno_Solutions.pdf)
 
