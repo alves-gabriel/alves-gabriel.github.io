@@ -2,9 +2,9 @@
 
 ### In Portuguese:
 
-- Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig : 
+- [Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig](./assets/Solucion_rio_Moyses_2.pdf)
 
-- Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto) :
+- [Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto)](./assets/Solucion_rio_Moyses_3.pdf)
 
 - [Mecânica Lagrangiana e Hamiltoniana](./assets/Mec_nica_Lagrangiana_e_Hamiltoniana.pdf)
 
@@ -15,4 +15,6 @@
 ---
 
 ### In English:
+
+- [D'inverno Solutions](./assets/D_Inverno_Solutions.pdf)
 
