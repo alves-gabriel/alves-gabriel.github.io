@@ -1,11 +1,32 @@
 theme: jekyll-theme-minimal
+
 title: Gabriel Oliveira Alves
-description: Link[Home Page](/README.md) <br>
-Materials <br>
-Misc <br>
-future: true
-header_pages:
-  - README.md
-  - teste.md
+
+description: Under construction
+
+navbar-links:
+  About Me: [Misc](teste.md)
+  Resources:
+    - Beautiful Jekyll: [Aqui](README.md)
+Author's home: "https://alves-gabriel.github.io/"
+
+title-separator: "-"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "page"
+show-avatar: true
+
 github:
   is_project_page: false
