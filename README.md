@@ -14,7 +14,7 @@ My [Misc](/teste.md)
 
 - Algumas notas sobre Mecânica Lagrangiana e Hamiltoniana:
 
-- [Algumas notas sobre tensores](/assets/Tensores.pdf)
+- [Algumas notas sobre tensores](assets/Tensores.pdf)
 
 - Uma breve introdução ao TikZ:
 
