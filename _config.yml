@@ -1,3 +1,5 @@
 theme: jekyll-theme-slate
 title: Gabriel Oliveira Alves
 description: Under construction
+github:
+  is_project_page: false
