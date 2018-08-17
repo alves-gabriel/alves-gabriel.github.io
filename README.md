@@ -8,13 +8,13 @@ My [Misc](/teste.md)
 
 ### In Portuguese:
 
-- Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig :
+- Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig : 
 
 - Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto) :
 
 - Algumas notas sobre Mecânica Lagrangiana e Hamiltoniana:
 
-- Algumas notas sobre tensores:
+- [Algumas notas sobre tensores](/Tensores.pdf)
 
 - Uma breve introdução ao TikZ:
 
