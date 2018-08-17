@@ -4,6 +4,6 @@ title: Gabriel Oliveira Alves
 
 show_downloads: ["true" or "false" to indicate whether to provide a download URL]
 
-logo: /assets/logo.jpg
+logo: ./assets/logo.jpg
 
 description: Teste 5
