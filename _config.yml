@@ -2,7 +2,9 @@ theme: jekyll-theme-minimal
 
 title: Gabriel Oliveira Alves
 
-description: Teste
+description: Teste I
+
+show_excerpts: true
 
 github:
   is_project_page: false
