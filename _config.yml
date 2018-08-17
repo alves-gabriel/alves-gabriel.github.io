@@ -2,12 +2,4 @@ theme: jekyll-theme-minimal
 
 title: Gabriel Oliveira Alves
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-layout: "post"
-
 description: Teste 4
