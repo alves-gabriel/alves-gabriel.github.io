@@ -2,8 +2,6 @@ theme: jekyll-theme-minimal
 
 title: Gabriel Oliveira Alves
 
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
+logo: /assets/logo.png
 
-logo: ./assets/logo.jpg
-
-description: Teste 5
+description: Teste 6
