@@ -6,6 +6,7 @@ title: Testeaaa
 
 <p align="center">
   <img src="https://anyserver.com/image.png" width="750px" height="300px"/></p>
+<p align="center">This is a centered caption for the image<p align="center">
 
 <table>
     <tr>
