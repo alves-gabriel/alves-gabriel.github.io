@@ -4,7 +4,8 @@ title: Testeaaa
 
 # Teste
 
- <img align="center" width="600" height="200" src="https://www.python.org/python-.png">
+<p align="center">
+  <img src="https://anyserver.com/image.png" width="750px" height="300px"/></p>
 
 <table>
     <tr>
