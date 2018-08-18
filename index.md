@@ -1,5 +1,5 @@
 ---
-title: Gabriel Oliveira Alves
+title: Gabriel O. Alves
 ---
 
 # Under construction
