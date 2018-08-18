@@ -6,11 +6,8 @@ title: Gabriel Oliveira Alves
 
 ***
 
-⚛ My [CV Lattes](http://lattes.cnpq.br/8556653249943418)
+☛ My [CV Lattes](http://lattes.cnpq.br/8556653249943418)
 
-⚛ My [Notes](/notes.md)
-
-⚛ My [Teste](/hello-world.md)
-
+☛ My [Notes](/notes.md)
 
 ---
