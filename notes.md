@@ -2,7 +2,7 @@
 
 ****
 
-### In Portuguese:
+### ☛ In Portuguese:
 
 - [Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig](./assets/Solucion_rio_Moyses_2.pdf)
 
@@ -16,7 +16,7 @@
 
 ---
 
-### In English:
+### ☛ In English:
 
 - [D'inverno Solutions (Incomplete)](./assets/D_Inverno_Solutions.pdf)
 
