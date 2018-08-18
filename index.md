@@ -10,7 +10,7 @@ My [CV Lattes](http://lattes.cnpq.br/8556653249943418)
 
 My [Notes](/notes.md)
 
-My [Teste](/_posts/hello-world.md)
+My [Teste](/hello-world.md)
 
 
 ---
