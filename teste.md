@@ -4,7 +4,7 @@ title: Testeaaa
 
 # Teste
 
-<img src="/assets/logo.jpg" alt="Smiley face" width="42" height="42" border="5">
+<img src="/assets/logo.jpg" alt="Smiley face" border="5">
 
 <p align="center">
   <img src="https://anyserver.com/image.png" width="750px" height="300px"/></p>
