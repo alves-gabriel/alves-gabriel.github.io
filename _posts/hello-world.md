@@ -6,12 +6,9 @@ Title: Post 1
 
 This is a test
 
-![eq1](http://mathurl.com/5euwuy)
+![eq1](http://mathurl.com/5euwuy.png)
 
 Thus
 
-![eq2](http://mathurl.com/y8663ks4)
-
-![pinguim](https://storage.googleapis.com/planet4-brasil-stateless/2018/07/pinguim-de-barbicha2.jpg)
-
+![eq2](http://mathurl.com/y8663ks4.png)
 
