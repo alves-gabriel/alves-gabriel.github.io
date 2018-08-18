@@ -4,6 +4,8 @@ title: Testeaaa
 
 # Teste
 
+<img src="/assets/logo.jpg" alt="Smiley face" width="42" height="42" border="5">
+
 <p align="center">
   <img src="https://anyserver.com/image.png" width="750px" height="300px"/></p>
 <p align="center">This is a centered caption for the image<p align="center">
