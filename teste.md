@@ -4,6 +4,8 @@ title: Testeaaa
 
 # Teste
 
+ <img align="left" width="600" height="200" src="https://www.python.org/python-.png">
+
 <table>
     <tr>
         <td>Foo</td>
