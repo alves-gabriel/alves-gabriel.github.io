@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
+
+<!--Light gray background-->
+<style>
+  body {
+  background-color: #f6f6f6;
+  }
+</style>
+
 <body>
 
     <!--Line break at the start of the page-->
@@ -22,8 +30,9 @@
             <!--This is the first column with a photo. It's shorter-->
             <div class = "col-md-3">
                 <!-- We assign an id to this column to centralize the text in
-                the CSS. h-100 alings the columnss-->
-                <div id="profile-wrapper"class="card card-body h-100">
+                the CSS. h-100 alings the columns. border-sucess makes the border
+                green -->
+                <div id="profile-wrapper"class="card card-body h-100 border-success">
 
                     <!-- My profile pic. We also assign an id to it-->
                     <img id="profile-pic" src="staticfiles/images/eu.jpg">
@@ -70,7 +79,8 @@
 
             <!-- First column-->
             <div class = "col-md-6">
-                <div class="card card-body h-100">
+                <!-- border-info makes the border blue -->
+                <div class="card card-body h-100 border-info">
                     <h1> My notes </h1>
                     <hr>
                     <h4> ☛ In Portuguese: </h4>
@@ -90,9 +100,10 @@
 
             <!-- Second column-->
             <div class = "col-md-6">
-                <div class="card card-body h-100"></div>
+                <div class="card card-body h-100 border-info"></div>
             </div>
         </div>
+        <br>
 
     </div>
 
