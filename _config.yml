@@ -2,9 +2,9 @@ theme: jekyll-theme-minimal
 
 title: Gabriel O. Alves
 
-logo: /assets/logo.jpg
+logo: /staticfiles/images/github_logo.png
 
-description: gabriel2.alves@usp.br 
+description: gabriel2.alves@usp.br
 
 show_downloads: true
 google_analytics:

@@ -1,0 +1,60 @@
+body{
+  background-color: gray;
+}
+
+#profile-wrapper{
+    text-align: center;
+}
+
+#profile-pic{
+    widht:150px;
+    height:150px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul{
+    padding: 0;
+    /*Make it so we don't see the dot*/
+    list-style-type: none;
+}
+
+/*Definitions for the social_git class*/
+.social_git-links ul, li{
+
+    list-style-type: none;
+    display: inline-block;
+}
+
+.social_git{
+
+    width:40px;
+    height:40px;
+}
+
+/*Definitions for the social_lattes class*/
+.social_lattes-links ul, li{
+
+    list-style-type: none;
+    display: inline-block;
+}
+
+.social_lattes{
+
+    width:33px;
+    height:33px;
+}
+
+/*Definitions for the social_orcid class*/
+.social_orcid-links ul, li{
+
+    list-style-type: none;
+    display: inline-block;
+}
+
+.social_orcid{
+
+    width:36px;
+    height:36px;
+}

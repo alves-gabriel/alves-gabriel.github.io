@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Gabriel Oliveira Alves</title>
+    <!--Imports the css from the static (files) folder-->
+    <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Imports the bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <!--Line break at the start of the page-->
+    <br>
+    <div class="container">
+
+        <!--This is the first row-->
+        <div class = "row">
+
+            <!--This is the first column with a photo. It's shorter-->
+            <div class = "col-md-3">
+                <!-- We assign an id to this column to centralize the text in
+                the CSS. h-100 alings the columnss-->
+                <div id="profile-wrapper"class="card card-body h-100">
+
+                    <!-- My profile pic. We also assign an id to it-->
+                    <img id="profile-pic" src="{% static 'images/eu.jpg' %}">
+                    <hr>
+
+                    <h3>Gabriel Alves</h3>
+                    <hr>
+
+                    <!-- Paragraph -->
+                    <p>Msc. student at IFUSP<p>
+
+                    <p>Bsc. in Molecular Sciences<p>
+
+                    <!-- Images with hyperlinks-->
+                    <ul class="social-links">
+                        <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="{% static 'images/github_logo.png' %}"></a></li>
+                        <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="{% static 'images/lattes_logo.png' %}"></a></li>
+                        <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="{% static 'images/orcid_logo.png' %}"></a></li>  
+                    </ul>
+                </div>
+            </div>
+
+            <!--This is the second column in the first row-->
+            <div class = "col-md-9">
+                <div class="card card-body h-100">
+                    <!--Headline-->
+                    <h1>Test 2</h1>
+                    <hr>
+
+                    <!-- Starts a new paragraph-->
+                    <p>Lorem Ipsum</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Second row-->
+        <br>
+        <div class = "row">
+
+            <!-- First column-->
+            <div class = "col-md-6">
+                <div class="card card-body h-100"></div>
+            </div>
+
+            <!-- Second column-->
+            <div class = "col-md-6">
+                <div class="card card-body h-100"></div>
+            </div>
+        </div>
+
+        <!-- Third row-->
+        <br>
+        <div class = "row">
+
+            <!-- First column-->
+            <div class = "col-md-6">
+                <div class="card card-body h-100"></div>
+            </div>
+
+            <!-- Second column-->
+            <div class = "col-md-6">
+                <div class="card card-body h-100"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
