@@ -1,5 +1,8 @@
-body{
-  background-color: gray;
+/*Overall*/
+*{
+
+  margin: 0;
+  padding: 0;
 }
 
 #profile-wrapper{

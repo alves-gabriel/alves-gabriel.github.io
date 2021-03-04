@@ -3,11 +3,16 @@
 <head>
 
     <title>Gabriel Oliveira Alves</title>
+    <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
+
     <!--Imports the css from the static (files) folder-->
     <link rel="stylesheet" href="staticfiles/css/main.css">
+    <link rel="stylesheet" href="staticfiles/css/sidebar_css.css">
 
     <!-- Imports the bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
 
@@ -15,97 +20,102 @@
 <style>
   body {
   background-color: #f6f6f6;
+  margin-top: 0;
   }
 </style>
 
 <body>
 
-    <!--Line break at the start of the page-->
-    <br>
-    <div class="container">
+  <!--Navigation bar. We use jquery to export it. This may not work locally
+  We have to setup a python server locally to test it.-->
+  <div id="navigation_bar">
 
-        <!--This is the first row-->
-        <div class = "row">
+  </div>
 
-            <!--This is the first column with a photo. It's shorter-->
-            <div class = "col-md-3">
-                <!-- We assign an id to this column to centralize the text in
-                the CSS. h-100 alings the columns. border-sucess makes the border
-                green -->
-                <div id="profile-wrapper"class="card card-body h-100 border-success">
+  <script>
+  $(function(){
+    $("#navigation_bar").load("sidebar.html");
+  });
+  </script>
+  <!--End of Navigation bar-->
 
-                    <!-- My profile pic. We also assign an id to it-->
-                    <img id="profile-pic" src="staticfiles/images/eu.jpg">
-                    <hr>
+  <!--Line break at the start of the page-->
+  <br>
+  <div class="container">
 
-                    <h3><a href="https://alves-gabriel.github.io">Gabriel Alves<a/></h3>
-                    <hr>
+    <!--This is the first row-->
+    <div class = "row">
 
-                    <!-- Paragraph -->
-                    <p>Msc. student at IFUSP<p>
+      <!--This is the first column with a photo. It's shorter-->
+      <div class = "col-md-3">
+        <!-- We assign an id to this column to centralize the text in
+        the CSS. h-100 alings the columns. border-sucess makes the border
+        green -->
+        <div id="profile-wrapper"class="card card-body h-100 border-success">
 
-                    <p>Bsc. in Molecular Sciences<p>
+          <!-- My profile pic. We also assign an id to it-->
+          <img id="profile-pic" src="staticfiles/images/eu.jpg">
+          <hr>
 
-                    <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
+          <h3><a href="https://alves-gabriel.github.io">Gabriel Alves<a/></h3>
+          <hr>
 
-                    <!-- Images with hyperlinks-->
-                    <ul class="social-links">
-                        <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
-                        <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
-                        <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
-                    </ul>
+          <!-- Paragraph -->
+          <p>Msc. student at IFUSP<p>
 
-                    <p>alves.go@protonmail.com</p>
-                </div>
-            </div>
+          <p>Bsc. in Molecular Sciences<p>
 
-            <!--This is the second column in the first row-->
-            <div class = "col-md-9">
-                <div class="card card-body h-100">
-                    <!--Headline-->
-                    <h1>About me</h1>
-                    <hr>
+          <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
 
-                    <!-- Starts a new paragraph-->
-                    <p>Lorem Ipsum</p>
+          <!-- Images with hyperlinks-->
+          <ul class="social-links">
+            <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
+            <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
+            <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
+          </ul>
 
-                </div>
-            </div>
+          <p>alves.go@protonmail.com</p>
+          </div>
+      </div>
+
+      <!--This is the second column in the first row-->
+      <div class = "col-md-9">
+        <div class="card card-body h-100">
+          <!--Headline-->
+          <h1>About me</h1>
+          <hr>
+
+          <!-- Starts a new paragraph-->
+          <p>Lorem Ipsum</p>
+
         </div>
-
-        <!-- Second row-->
-        <br>
-        <div class = "row">
-
-            <!-- First column-->
-            <div class = "col-md-6">
-                <!-- border-info makes the border blue -->
-                <div class="card card-body h-100 border-info">
-                    <h1> My notes </h1>
-                    <hr>
-                    <h4> ☛ In Portuguese: </h4>
-
-                    <!-- Some personal notes-->
-                    <a href="/assets/Solucion_rio_Moyses_2.pdf"><p>Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig (2016)</p></a>
-
-                    <a href="/assets/Solucion_rio_Moyses_3.pdf"><p>Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto)</p></a>
-
-                    <a href="/assets/Mec_nica_Lagrangiana_e_Hamiltoniana.pdf"><p>Mecânica Lagrangiana e Hamiltoniana (2017)</p></a>
-
-                    <a href="/assets/Tensores.pdf"><p>Notas sobre tensores (2018)</p></a>
-
-                    <a href="/assets/Uma_breve_introdu__o_ao_TikZ.pdf"><p>Uma breve introdução ao TikZ (2015)</p></a>
-                </div>
-            </div>
-
-            <!-- Second column-->
-            <div class = "col-md-6">
-                <div class="card card-body h-100 border-info"></div>
-            </div>
-        </div>
-        <br>
-
+      </div>
     </div>
 
+    <!-- Second row-->
+    <br>
+    <div class = "row">
+
+      <!-- First column-->
+      <div class = "col-md-6">
+        <!-- border-info makes the border blue -->
+        <div class="card card-body h-100 border-info">
+          <h1><a href="notes.html"> My notes </a></h1>
+          <hr>
+
+          Here we can check some of the stuff I wrote
+        </div>
+      </div>
+
+      <!-- Second column-->
+      <div class = "col-md-6">
+        <div class="card card-body h-100 border-info"></div>
+      </div>
+    </div>
+    <br>
+
+  </div>
+
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+<!--Checks if the sidebar is on or off using a checkbox-->
+<input type="checkbox" id="check">
+<label for="check">
+
+<!-- Uses font from https://fontawesome.com, lined in the scr above-->
+<i class="fas fa-angle-right" id="open_button"></i>
+<i class="fas fa-angle-left" id="cancel"></i>
+</label>
+
+<!--The sidebar-->
+<div class="sidebar">
+<header>Menu</header>
+
+<!--Sidebar items. I have to declade a id="sidebutton Here"
+otherwise ALL the other elements with a <a></a> will behave like this.
+By doing so I can change only the #sidebutton parts in the CSS.-->
+<a id="sidebutton" href="./">
+  <i class="fas fa-home"></i>
+  <span>Home</span>
+</a>
+
+<!--Notes-->
+<a id="sidebutton" href="notes.html">
+  <i class="far fa-edit"></i>
+  <span>Notes</span>
+</a>
+</div>
