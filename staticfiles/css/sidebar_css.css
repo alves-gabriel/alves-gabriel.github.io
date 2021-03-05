@@ -1,5 +1,6 @@
 /*CSS based on the tutorial in https://www.codingnepalweb.com/2020/04/responsive-sidebar-menu-html-css.html*/
 
+/*Font from google API*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
 
 /*Overall*/
@@ -18,7 +19,8 @@
   width: 240px;
   left: -240px;
   height: 100%; /*If I put auto here the height will go up to the final button*/
-  background: #404040;
+  background: #ededed;
+  border-right: 1px solid black;
   transition: all .5s ease; /*Closing animation*/
 }
 
@@ -29,7 +31,7 @@
   color: white;
   line-height: 70px;
   text-align: center;
-  background: #1a1a1a;
+  background: #404040;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -40,7 +42,7 @@
   display: block;
   height: 65px;
   width: 100%;
-  color: white;
+  color: black;
 
   line-height: 65px;
   padding-left: 30px;
@@ -52,13 +54,14 @@
   border-left: 5px solid transparent;
 
   font-family: 'Open Sans', sans-serif;
+  font-weight:600;
   transition: all .5s ease;
 }
 
 /*Button text color when active/hovering*/
 #sidebutton.active,#sidebutton:hover{
-  border-left: 5px solid #0a8a2c;
-  color: #0a8a2c;
+  border-left: 5px solid #45a0b5;
+  color: #45a0b5;
 }
 
 .sidebar #sidebutton i{
@@ -82,7 +85,7 @@ I don't wanna interfere with the hovering with ALL the page, only within
 the sidebar*/
 label #open_button,label #cancel{
 
-  position: absolute;
+  position: fixed; /*This makes the button stay in the same place even after scrolling*/
   cursor: pointer;
   color: white;
   border-radius: 5px;

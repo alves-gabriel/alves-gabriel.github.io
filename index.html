@@ -14,13 +14,31 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+    <!-- Imports the bootstrap 3 to make the affix work-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <!--Light gray background-->
 <style>
+
+  /*Imports two different font styles. One for the menu and one for the text*/
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
   body {
-  background-color: #f6f6f6;
-  margin-top: 0;
+
+    background-color: #f6f6f6;
+    margin-top: 0;
+    font-family: 'Open Sans', serif;
+    font-weight:400;
+  }
+
+  .affix {
+  top: 20px;
+  z-index: 9999 !important;
   }
 </style>
 
@@ -51,13 +69,13 @@
         <!-- We assign an id to this column to centralize the text in
         the CSS. h-100 alings the columns. border-sucess makes the border
         green -->
-        <div id="profile-wrapper"class="card card-body h-100 border-success">
+        <div id="profile-wrapper" class="card card-body h-100 border-success">
 
           <!-- My profile pic. We also assign an id to it-->
           <img id="profile-pic" src="staticfiles/images/eu.jpg">
           <hr>
 
-          <h3>Gabriel Alves</h3>
+          <h3><b>Gabriel Alves</b></h3>
           <hr>
 
           <!-- Paragraph -->
@@ -82,7 +100,7 @@
       <div class = "col-md-9">
         <div class="card card-body h-100">
           <!--Headline-->
-          <h1>About me</h1>
+          <h1><b>About me</b></h1>
           <hr>
 
           <!-- Starts a new paragraph-->
@@ -90,6 +108,7 @@
 
         </div>
       </div>
+
     </div>
 
     <!-- Second row-->
@@ -100,26 +119,80 @@
       <div class = "col-md-6">
         <!-- border-info makes the border blue -->
         <div class="card card-body h-100 border-info">
-          <h1> My notes </h1>
+          <h1><b> My notes </b></h1>
           <hr>
 
-          <nobr><a href="notes.html">Here</a> you can check some of the stuff I wrote.</nobr>
+          <p><a href="notes.html">Here</a> you can check some of the stuff I wrote.</p>
         </div>
       </div>
 
       <!-- Second column-->
       <div class = "col-md-6">
         <div class="card card-body h-100 border-info">
-          <h1> Research </h1>
+          <h1><b> Research </b></h1>
           <hr>
 
-          <p>Here you can find some stuff I have been working on.</p>
+          <p><a href="research.html">Here</a> you can find some stuff I have been working on.</p>
         </div>
       </div>
     </div>
     <br>
 
-  </div>
+    <!-- Third row-->
+    <br>
+    <div class = "row">
+
+      <!-- First column-->
+      <div class = "col-md-6">
+        <!-- border-info makes the border blue -->
+        <div class="card card-body h-100 border-info">
+          <h1><b> Codes </b></h1>
+          <hr>
+
+          <p><a href="codes.html">Here</a> you can check some of the programming stuff.</p>
+        </div>
+      </div>
+
+      <!-- Second column-->
+      <div class = "col-md-6">
+        <div class="card card-body h-100 border-info">
+          <h1><b> Miscellanea </b></h1>
+          <hr>
+
+          <p><a href="misc.html">Here</a> some random stuff and recommendations.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    a
+    <br>
 
 </body>
 
