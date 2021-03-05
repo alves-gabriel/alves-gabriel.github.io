@@ -4,6 +4,7 @@
 
     <title>Gabriel Oliveira Alves</title>
     <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Imports the css from the static (files) folder-->
     <link rel="stylesheet" href="staticfiles/css/main.css">
@@ -56,35 +57,40 @@
     <div class = "row">
 
       <!--This is the first column with a photo. It's shorter-->
-      <div class = "col-md-3">
-        <!-- We assign an id to this column to centralize the text in
-        the CSS. h-100 alings the columns. border-sucess makes the border
-        green -->
-        <div id="profile-wrapper" class="card card-body h-100 border-success">
+      <div class = "col-md-3" position: "sticky">
+        <!--Makes the leftmost column fixed-->
+        <div class="position-fixed">
+          <br>
+          <br>
+          <!-- We assign an id to this column to centralize the text in
+          the CSS. h-100 alings the columns. border-sucess makes the border
+          green -->
+          <div id="profile-wrapper" class="card card-body h-100 border-success">
 
-          <!-- My profile pic. We also assign an id to it-->
-          <img id="profile-pic" src="staticfiles/images/eu.jpg">
-          <hr>
+            <!-- My profile pic. We also assign an id to it-->
+            <img id="profile-pic" src="staticfiles/images/eu.jpg">
+            <hr>
 
-          <h3><b>Gabriel Alves</b></h3>
-          <hr>
+            <h3><b>Gabriel Alves</b></h3>
+            <hr>
 
-          <!-- Paragraph -->
-          <p>Msc. student at IFUSP<p>
+            <!-- Paragraph -->
+            <p>Msc. student at IFUSP<p>
 
-          <p>Bsc. in Molecular Sciences<p>
+            <p>Bsc. in Molecular Sciences<p>
 
-          <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
+            <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
 
-          <!-- Images with hyperlinks-->
-          <ul class="social-links">
-            <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
-            <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
-            <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
-          </ul>
+            <!-- Images with hyperlinks-->
+            <ul class="social-links">
+              <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
+              <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
+              <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
+            </ul>
 
-          <p>alves.go@protonmail.com</p>
+            <p>alves.go@protonmail.com</p>
           </div>
+        </div>
       </div>
 
       <!--This is the second column in the first row-->
@@ -102,12 +108,29 @@
 
     </div>
 
+    <!--Horizontal line-->
+    <div class = "row">
+      <div class = "col-md-9 offset-md-3">
+        <hr>
+      </div>
+    </div>
+
     <!-- Second row-->
     <br>
     <div class = "row">
 
-      <!-- First column-->
-      <div class = "col-md-6">
+      <!-- Second column-->
+      <!--First  column-->
+      <div class = "col-md-5 offset-md-3">
+        <div class="card card-body h-100 border-info">
+          <h1><b> Research </b></h1>
+          <hr>
+
+          <p><a href="research.html">Here</a> you can find some stuff I have been working on.</p>
+        </div>
+      </div>
+
+      <div class = "col-md-4 ">
         <!-- border-info makes the border blue -->
         <div class="card card-body h-100 border-info">
           <h1><b> My notes </b></h1>
@@ -117,24 +140,22 @@
         </div>
       </div>
 
-      <!-- Second column-->
-      <div class = "col-md-6">
-        <div class="card card-body h-100 border-info">
-          <h1><b> Research </b></h1>
-          <hr>
-
-          <p><a href="research.html">Here</a> you can find some stuff I have been working on.</p>
-        </div>
-      </div>
     </div>
     <br>
+
+    <!--Horizontal line-->
+    <div class = "row">
+      <div class = "col-md-9 offset-md-3">
+        <hr>
+      </div>
+    </div>
 
     <!-- Third row-->
     <br>
     <div class = "row">
 
       <!-- First column-->
-      <div class = "col-md-6">
+      <div class = "col-md-5 offset-md-3">
         <!-- border-info makes the border blue -->
         <div class="card card-body h-100 border-info">
           <h1><b> Codes </b></h1>
@@ -145,17 +166,18 @@
       </div>
 
       <!-- Second column-->
-      <div class = "col-md-6">
+      <div class = "col-md-4">
         <div class="card card-body h-100 border-info">
           <h1><b> Miscellanea </b></h1>
           <hr>
 
           <p><a href="misc.html">Here</a> some random stuff and recommendations.</p>
+
         </div>
       </div>
     </div>
     <br>
-    
+
 </body>
 
 </html>

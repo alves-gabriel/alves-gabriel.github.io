@@ -3,7 +3,7 @@
 <head>
 
     <title>Gabriel Oliveira Alves</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
 
     <!--Imports the css from the static (files) folder-->
     <link rel="stylesheet" href="staticfiles/css/main.css">
@@ -18,14 +18,25 @@
 
 <!--Light gray background-->
 <style>
+
+  /*Imports two different font styles. One for the menu and one for the text*/
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
   body {
-  background-color: #f6f6f6;
+
+    background-color: #f6f6f6;
+    margin-top: 0;
+    font-family: 'Open Sans', serif;
+    font-weight:400;
   }
+
 </style>
 
 <body>
 
-  <!--Navigation bar. We use jquery to export it-->
+  <!--Navigation bar. We use jquery to export it. This may not work locally
+  We have to setup a python server locally to test it.-->
   <div id="navigation_bar">
 
   </div>
@@ -45,35 +56,40 @@
     <div class = "row">
 
       <!--This is the first column with a photo. It's shorter-->
-      <div class = "col-md-3">
-        <!-- We assign an id to this column to centralize the text in
-        the CSS. h-100 alings the columns. border-sucess makes the border
-        green -->
-        <div id="profile-wrapper"class="card card-body h-100 border-success">
+      <div class = "col-md-3" position: "sticky">
+        <!--Makes the leftmost column fixed-->
+        <div class="position-fixed">
+          <br>
+          <br>
+          <!-- We assign an id to this column to centralize the text in
+          the CSS. h-100 alings the columns. border-sucess makes the border
+          green -->
+          <div id="profile-wrapper" class="card card-body h-100 border-success">
 
-          <!-- My profile pic. We also assign an id to it-->
-          <img id="profile-pic" src="staticfiles/images/eu.jpg">
-          <hr>
+            <!-- My profile pic. We also assign an id to it-->
+            <img id="profile-pic" src="staticfiles/images/eu.jpg">
+            <hr>
 
-          <h3>Gabriel Alves</h3>
-          <hr>
+            <h3><b>Gabriel Alves</b></h3>
+            <hr>
 
-          <!-- Paragraph -->
-          <p>MSc. student at IFUSP<p>
+            <!-- Paragraph -->
+            <p>Msc. student at IFUSP<p>
 
-          <p>BSc. in Molecular Sciences<p>
+            <p>Bsc. in Molecular Sciences<p>
 
-          <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
+            <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
 
-          <!-- Images with hyperlinks-->
-          <ul class="social-links">
+            <!-- Images with hyperlinks-->
+            <ul class="social-links">
               <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
               <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
               <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
-          </ul>
+            </ul>
 
-          <p>alves.go@protonmail.com</p>
+            <p>alves.go@protonmail.com</p>
           </div>
+        </div>
       </div>
 
       <!--This is the second column in the first row-->
@@ -97,9 +113,9 @@
 
         </div>
       </div>
+
     </div>
 
-  </div>
-
 </body>
+
 </html>
