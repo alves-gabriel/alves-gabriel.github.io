@@ -57,39 +57,16 @@
 
       <!--This is the first column with a photo. It's shorter-->
       <div class = "col-md-3" position: "sticky">
-        <!--Makes the leftmost column fixed-->
-        <div class="position-fixed">
-          <br>
-          <br>
-          <!-- We assign an id to this column to centralize the text in
-          the CSS. h-100 alings the columns. border-sucess makes the border
-          green -->
-          <div id="profile-wrapper" class="card card-body h-100 border-success">
 
-            <!-- My profile pic. We also assign an id to it-->
-            <img id="profile-pic" src="staticfiles/images/eu.jpg">
-            <hr>
+        <!-- Imports another html using jquery -->
+        <div id="presentation_card"></div>
 
-            <h3><b>Gabriel Alves</b></h3>
-            <hr>
+        <script>
+        $(function(){
+          $("#presentation_card").load("card.html");
+        });
+        </script>
 
-            <!-- Paragraph -->
-            <p>Msc. student at IFUSP<p>
-
-            <p>Bsc. in Molecular Sciences<p>
-
-            <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
-
-            <!-- Images with hyperlinks-->
-            <ul class="social-links">
-              <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
-              <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
-              <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
-            </ul>
-
-            <p>alves.go@protonmail.com</p>
-          </div>
-        </div>
       </div>
 
       <!--This is the second column in the first row-->
