@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <!-- Page icon -->
-    <link rel="shortcut icon" href="/staticfiles/images/github_logo.png"/>
-
 </head>
 
 <!--Light gray background-->
@@ -30,7 +27,7 @@
 
   body {
 
-    background-color: #FFFFFF;
+    background-color: #f6f6f6;
     margin-top: 0;
     font-family: 'Open Sans', serif;
     font-weight:400;
@@ -42,17 +39,16 @@
 
   <!--Navigation bar. We use jquery to export it. This may not work locally
   We have to setup a python server locally to test it.-->
-  <div id="header_bar">
+  <div id="navigation_bar">
 
   </div>
 
   <script>
   $(function(){
-    $("#header_bar").load("header.html");
+    $("#navigation_bar").load("sidebar.html");
   });
   </script>
   <!--End of Navigation bar-->
-
 
   <!--Line break at the start of the page-->
   <br>
@@ -62,7 +58,7 @@
     <div class = "row">
 
       <!--This is the first column with a photo. It's shorter-->
-      <div class = "col-md-3">
+      <div class = "col-md-3" position: "sticky">
 
         <!-- Imports another html using jquery -->
         <div id="presentation_card"></div>
@@ -77,41 +73,86 @@
 
       <!--This is the second column in the first row-->
       <div class = "col-md-9">
-        <div>
+        <div class="card card-body h-100 border-success">
           <!--Headline-->
           <h1><b>About me</b></h1>
           <hr>
 
           <!-- Starts a new paragraph-->
-          <p class="tab">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget consectetur lorem, eget scelerisque mauris. Proin sed ante ut lacus feugiat vestibulum eu in erat. Nullam consequat sem sit amet risus viverra semper. Suspendisse luctus vitae risus nec scelerisque. Vestibulum elit ipsum, ultricies vel odio eget, mollis venenatis mauris. Morbi eget porta libero. Nunc sodales ut diam vel imperdiet. Mauris condimentum mi non orci auctor, a rutrum leo finibus. Duis laoreet elit id tortor elementum fringilla. Etiam sit amet urna ac ligula mattis mattis at et purus. Sed feugiat ex id varius scelerisque. Maecenas sollicitudin, turpis id mattis ultrices, massa est pulvinar ipsum, in fringilla dui odio sit amet dolor. Suspendisse sollicitudin leo at enim mattis, a elementum odio facilisis. Aenean eget interdum erat, ac faucibus massa. Sed pellentesque semper placerat. Sed et condimentum orci, nec condimentum justo.
-          </p>
+          <p>Lorem Ipsum</p>
 
         </div>
       </div>
 
     </div>
 
+    <!--Horizontal line-->
+    <div class = "row">
+      <div class = "col-md-9 offset-md-3">
+        <hr>
+      </div>
+    </div>
+
     <!-- Second row-->
+    <br>
     <div class = "row">
 
-      <!--First  column. The offset prevents an overlap-->
-      <div class = "col-md-9 offset-md-3">
-          <p style = "margin-left: 10px;">
-          <h1><b> News </b></h1>
+      <!-- Second column-->
+      <!--First  column-->
+      <div class = "col-md-5 offset-md-3">
+        <div class="card card-body h-100 border-info">
+          <h1><b> Research </b></h1>
           <hr>
 
-          <!-- Bulletin. Here I use the code for the pushpin emoji -->
-          <dl>
-            <dt> &#128204; 08/2021 </dt>
-            <dd> I'll visit university of Uppsala as an exchange student during the Fall Semester! </dd>
-            <br>
-            <dt> &#128204; 23/06/2021 </dt>
-            <dd> Check out our latest preprint on <a href="https://arxiv.org/abs/2106.12072">Bayesian Inference for Collisional Thermometry</a>. This is part of my Master's project. </dd>
-          </dl>
-          </p>
+          <p><a href="research.html">Here</a> you can find some stuff I have been working on.</p>
+        </div>
       </div>
 
+      <div class = "col-md-4 ">
+        <!-- border-info makes the border blue -->
+        <div class="card card-body h-100 border-info">
+          <h1><b> My notes </b></h1>
+          <hr>
+
+          <p><a href="notes.html">Here</a> you can check some of the stuff I wrote.</p>
+        </div>
+      </div>
+
+    </div>
+    <br>
+
+    <!--Horizontal line-->
+    <div class = "row">
+      <div class = "col-md-9 offset-md-3">
+        <hr>
+      </div>
+    </div>
+
+    <!-- Third row-->
+    <br>
+    <div class = "row">
+
+      <!-- First column-->
+      <div class = "col-md-5 offset-md-3">
+        <!-- border-info makes the border blue -->
+        <div class="card card-body h-100 border-info">
+          <h1><b> Codes </b></h1>
+          <hr>
+
+          <p><a href="codes.html">Here</a> you can check some of the programming stuff.</p>
+        </div>
+      </div>
+
+      <!-- Second column-->
+      <div class = "col-md-4">
+        <div class="card card-body h-100 border-info">
+          <h1><b> Miscellanea </b></h1>
+          <hr>
+
+          <p><a href="misc.html">Click here</a> to find some random stuff and recommendations.</p>
+
+        </div>
+      </div>
     </div>
     <br>
 

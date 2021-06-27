@@ -1,18 +1,14 @@
 <!--Makes the leftmost column fixed-->
 <div class="position-fixed">
   <br>
-  <br>
-  <!-- We assign an id to this column to centralize the text in
-  the CSS. h-100 alings the columns. border-sucess makes the border
-  green -->
-  <div id="profile-wrapper" class="card card-body h-100 border-secondary">
+  <div>
 
     <!-- My profile pic. We also assign an id to it-->
-    <img id="profile-pic" src="staticfiles/images/eu.jpg">
+    <img id="profile-pic" src="staticfiles/images/eu.jpg" class="center">
     <hr>
 
     <!--Home link-->
-    <h3><b><a href="./" style="color: inherit; text-decoration: none">Gabriel Alves</a></b></h3>
+    <h3 style="text-align: center;"><b><a href="./" style="color: inherit; text-decoration: none">Gabriel Alves</a></b></h3>
     <hr>
 
     <!-- Paragraph -->
@@ -20,15 +16,15 @@
 
     <p>BSc. in Molecular Sciences<p>
 
-    <a href="assets/CV_Gabriel.pdf"><b>My CV</b></a>
+    <a href="assets/CV_Gabriel.pdf" style="text-decoration: none; color:#4169e1;"><p style="text-align: center;"><b>My CV</b></p></a>
 
-    <!-- Images with hyperlinks-->
-    <ul class="social-links">
-      <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png"></a></li>
+    <!-- Images with hyperlinks. Using the inline CSS here is better to centralize-->
+    <ul style="text-align: center;">
+      <li><a href="https://github.com/alves-gabriel"><img class="social_git" src="staticfiles/images/github_logo.png" ></a></li>
       <li><a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8160126T3"><img class="social_lattes" src="staticfiles/images/lattes_logo.png"></a></li>
       <li><a href="https://orcid.org/0000-0003-2171-2034"><img class="social_orcid" src="staticfiles/images/orcid_logo.png"></a></li>
     </ul>
 
-    <p>alves.go@protonmail.com</p>
+    <p style="text-align: center;">alves.go.co@gmail.com</p>
   </div>
 </div>

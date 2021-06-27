@@ -1,0 +1,129 @@
+/*CSS based on the tutorial in https://www.codingnepalweb.com/2020/04/responsive-sidebar-menu-html-css.html*/
+
+/*Font from google API*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
+
+/*Overall*/
+*{
+
+  top:-0px; /*Makes the sidebar ignore the top margin*/
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/*Sidebar settings. It has a left offset so it disappears from the screen*/
+.sidebar{
+
+  position: fixed;
+  width: 240px;
+  left: -240px;
+  height: 100%; /*If I put auto here the height will go up to the final button*/
+  background: #ededed;
+  border-right: 1px solid black;
+  transition: all .5s ease; /*Closing animation*/
+}
+
+/*Sidebar title*/
+.sidebar header{
+
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #404040;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*Sidebar button properties when unselected*/
+.sidebar #sidebutton{
+
+  /*Button geometry and text colors*/
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: black;
+
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+
+  /*Button borders*/
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight:600;
+  transition: all .5s ease;
+}
+
+/*Button text color when active/hovering*/
+#sidebutton.active,#sidebutton:hover{
+  border-left: 5px solid #45a0b5;
+  color: #45a0b5;
+}
+
+.sidebar #sidebutton i{
+  font-size: 23px;
+  margin-right: 16px;
+}
+
+.sidebar #sidebutton span{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/*Does not display the checkbox*/
+#check{
+  display: none;
+}
+
+/*Action when opening and closing the sidebar. Note that I'm modifying
+'#open_button' here, and not 'a', as we would expect. That's because
+I don't wanna interfere with the hovering with ALL the page, only within
+the sidebar*/
+label #open_button,label #cancel{
+
+  position: fixed; /*This makes the button stay in the same place even after scrolling*/
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #262626;
+
+  margin-left: 30px; /*A slight left-padding*/
+  top: 50%; /*Put's the open button in the middle of the screen, even after resizing*/
+  font-size: 29px;
+
+  background: #262626;
+  height: 45px;
+  width: 45px;
+
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+}
+
+label #cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*Checked button properties*/
+#check:checked ~ .sidebar{
+  left: 0;
+}
+
+/*When open*/
+#check:checked ~ label #open_button{
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*When closed*/
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}

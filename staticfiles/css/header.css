@@ -1,0 +1,124 @@
+/*Imports the font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/*Navigation bar black background*/
+nav{
+    background: #282828;
+    height: 100px;
+    width: 100%;
+}
+
+/*Header title class*/
+label.title{
+    color: white;
+    font-size: 35px;
+    line-height: 0px; /*For some reason the title must be set to 0px to truly correspond to 100px and align with other elements*/
+    padding-left: 50px;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+/*Shift options to the right*/
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+/*Makes the list horizontal*/
+nav ul li{
+    display: inline-block;
+    line-height: 100px; /*Should be the same height as the title*/
+    margin: 0 5px;
+}
+
+/*Cosmetics of the menu items*/
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+/*Changes the item color/size when clicked/hovered*/
+a.active,a:hover{
+    background: none;
+    transition: .5s;
+    text-decoration: none; /*Removes the link understroke*/
+    color: #4169e1; /*Royal Blue*/
+}
+
+/*Menu button*/
+.check_button{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 100px; /*Should be the same height as the title*/
+    margin-right: 30px;
+    cursor: pointer;
+    display: none; /*Hides the icon*/
+}
+
+/*Hides the checkbox associated with the menu button above.
+This appears id="check" in the HTML*/
+#check{
+  display: none;
+}
+
+/*Changes the logo when the screen is too small or overlaps with the photo*/
+@media (max-width: 1800px){
+    label.title{
+        display:none;
+    }
+
+}
+
+/*Makes the button appear and changes the items to the menu config.*/
+@media (max-width: 850px){
+    .check_button{
+        display: block;
+        transition: 0.5s;
+    }
+    ul{
+        position: fixed;
+        background: gray;
+        opacity: 1.0;
+        width: 100%;
+        height: 100vh;
+        top: 100px; /*This height must coincide with the height of the header*/
+        left: -100%;
+        z-index:1; /*IMPORTANT! This makes the menu overlay all the text!*/
+        text-align:center;
+        transition: all .5s;
+    }
+
+    /*Moves the items to the side menu, removing them from the main screen. Also changes the comestics*/
+    nav ul li{
+        display: block;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    /*Makes the item bigger when hovered*/
+    a:hover, a.active{
+        background: none;
+        color: white;
+        font-size: 30px;
+        color: #4169e1;
+    }
+
+    /*The magic. It changes the class ul checking wheter the menu/checkbox is open or not.
+    The menu appears from the left*/
+    #check:checked ~ ul{
+      left: 0;
+    }
+}

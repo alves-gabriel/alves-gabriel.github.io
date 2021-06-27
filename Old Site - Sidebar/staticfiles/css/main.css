@@ -6,12 +6,6 @@
   padding: 0;
 }
 
-/*Paragraph*/
-.tab {
-  text-indent:40px;
-  text-align: justify;
-}
-
 #profile-wrapper{
     text-align: center;
     background-color:#ededed;
@@ -78,25 +72,9 @@ ul{
 }
 
 /*Margin between rows for mobile*/
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .col-md-4,.col-md-5, .col-md-9 {
-    margin-left: 0px; /*Removes the margin in the mobile view, since we also remove the presentation card!*/
+    margin-left: 100px;
     margin-bottom: 20px;
-  }
-}
-
-/*Class to center text, figures and so on*/
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-/*Removes the presentation car in mobile*/
-@media (max-width: 1000px) {
-  #presentation_card{
-    display:none;
-    transition: 0.5s;
   }
 }
