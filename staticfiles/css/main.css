@@ -12,6 +12,21 @@
   text-align: justify;
 }
 
+/*These two definitions define a class for the link which does not
+inherit the a tag from the header.css file, which changes the size
+of the word*/
+.std{
+  text-decoration: none; /*Removes the link understroke*/
+  color: #4169e1; /*Royal Blue*/
+  font-size: inherit;
+}
+
+.std:hover
+{
+  color: purple; /*Royal Blue*/
+  font-size: inherit;
+}
+
 #profile-wrapper{
     text-align: center;
     background-color:#ededed;
@@ -24,6 +39,11 @@
     box-shadow: 0 0 1px transparent;
     margin-left: auto;
     margin-right: auto;
+}
+
+#presentation_card_mobile{
+  display:none;
+  transition: 0.5s;
 }
 
 ul{
@@ -78,10 +98,13 @@ ul{
 }
 
 /*Margin between rows for mobile*/
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
   .col-md-4,.col-md-5, .col-md-9 {
     margin-left: 0px; /*Removes the margin in the mobile view, since we also remove the presentation card!*/
     margin-bottom: 20px;
+  }
+  .col-md-3{
+    width: 0px;
   }
 }
 
@@ -97,6 +120,13 @@ ul{
 @media (max-width: 1000px) {
   #presentation_card{
     display:none;
+    transition: 0.5s;
+  }
+
+  #presentation_card_mobile{
+    width: 50%;
+    margin: 0 auto;
+    display:block;
     transition: 0.5s;
   }
 }

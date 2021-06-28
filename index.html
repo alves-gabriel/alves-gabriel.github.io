@@ -5,13 +5,9 @@
 
     <!-- The numerical .html file is simply a google verification to index this page on the search engine -->
 
-    <title>Gabriel Oliveira Alves</title>
+    <title>Gabriel O. Alves</title>
     <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--Imports the css from the static (files) folder-->
-    <link rel="stylesheet" href="staticfiles/css/main.css">
-    <link rel="stylesheet" href="staticfiles/css/sidebar_css.css">
 
     <!-- Imports the bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,6 +16,9 @@
 
     <!-- Page icon -->
     <link rel="shortcut icon" href="/staticfiles/images/github_logo.png"/>
+
+    <!--Imports the css from the static (files) folder-->
+    <link rel="stylesheet" href="staticfiles/css/main.css">
 
 </head>
 
@@ -55,7 +54,6 @@
   </script>
   <!--End of Navigation bar-->
 
-
   <!--Line break at the start of the page-->
   <br>
   <div class="container">
@@ -80,13 +78,29 @@
       <!--This is the second column in the first row-->
       <div class = "col-md-9">
         <div>
+
+          <!-- Imports the presentation card ONLY for mobile-->
+          <div id="presentation_card_mobile"></div>
+
+          <script>
+          $(function(){
+            $("#presentation_card_mobile").load("card_mobile.html");
+          });
+          </script>
+
           <!--Headline-->
-          <h1><b>About me</b></h1>
+          <h1 style="margin-top: 0cm;"><b>About me</b></h1>
           <hr>
 
           <!-- Starts a new paragraph-->
           <p class="tab">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget consectetur lorem, eget scelerisque mauris. Proin sed ante ut lacus feugiat vestibulum eu in erat. Nullam consequat sem sit amet risus viverra semper. Suspendisse luctus vitae risus nec scelerisque. Vestibulum elit ipsum, ultricies vel odio eget, mollis venenatis mauris. Morbi eget porta libero. Nunc sodales ut diam vel imperdiet. Mauris condimentum mi non orci auctor, a rutrum leo finibus. Duis laoreet elit id tortor elementum fringilla. Etiam sit amet urna ac ligula mattis mattis at et purus. Sed feugiat ex id varius scelerisque. Maecenas sollicitudin, turpis id mattis ultrices, massa est pulvinar ipsum, in fringilla dui odio sit amet dolor. Suspendisse sollicitudin leo at enim mattis, a elementum odio facilisis. Aenean eget interdum erat, ac faucibus massa. Sed pellentesque semper placerat. Sed et condimentum orci, nec condimentum justo.
+            Hello! I'm Gabriel Oliveira Alves, a Masters student at the University of São Paulo (USP). I'm under the supervision of
+            <a class="std" href="http://www.fmt.if.usp.br/~gtlandi/">Prof. Gabriel T. Landi</a> and we're currently working on thermometry and
+            collisional models.
+
+            I obtained my Bacherlor in Molecular Sciences in the same university. During my undergraduate project, also under
+            the supervision of Prof. Landi, I studied quantum phase transitions in the quantum Rabi model and weak measurements/stochastic master
+            equations. My main reserach interests are quantum information and quantum thermodynamics.
           </p>
 
         </div>
@@ -97,8 +111,13 @@
     <!-- Second row-->
     <div class = "row">
 
+      <div class = "col-md-3">
+
+
+      </div>
+
       <!--First  column. The offset prevents an overlap-->
-      <div class = "col-md-9 offset-md-3">
+      <div class = "col-md-9">
           <p style = "margin-left: 10px;">
           <h1><b> News </b></h1>
           <hr>
@@ -109,7 +128,7 @@
             <dd> I'll visit university of Uppsala as an exchange student during the Fall Semester! </dd>
             <br>
             <dt> &#128204; 23/06/2021 </dt>
-            <dd> Check out our latest preprint on <a href="https://arxiv.org/abs/2106.12072">Bayesian Inference for Collisional Thermometry</a>. This is part of my Master's project. </dd>
+            <dd> Check out our latest preprint on <a class="std" href="https://arxiv.org/abs/2106.12072">Bayesian Inference for Collisional Thermometry</a>. This is part of my Master's project. </dd>
           </dl>
           </p>
       </div>

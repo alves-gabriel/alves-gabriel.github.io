@@ -73,20 +73,22 @@ This appears id="check" in the HTML*/
 }
 
 /*Changes the logo when the screen is too small or overlaps with the photo*/
-@media (max-width: 1800px){
+@media (max-width: 1000px){
     label.title{
         display:none;
     }
-
 }
 
 /*Makes the button appear and changes the items to the menu config.*/
-@media (max-width: 850px){
+@media (max-width: 1000px){
     .check_button{
         display: block;
         transition: 0.5s;
     }
-    ul{
+
+    /*I'm creating a menu class here in order not to clash with the social
+    links images in the card*/
+    ul.menu{
         position: fixed;
         background: gray;
         opacity: 1.0;
