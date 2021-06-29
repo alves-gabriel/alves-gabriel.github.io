@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-    <title>Gabriel Oliveira Alves</title>
-    <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
+    <!-- The numerical .html file is simply a google verification to index this page on the search engine -->
 
-    <!--Imports the css from the static (files) folder-->
-    <link rel="stylesheet" href="staticfiles/css/main.css">
-    <link rel="stylesheet" href="staticfiles/css/sidebar_css.css">
+    <title>Gabriel O. Alves</title>
+    <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Imports the bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Page icon -->
+    <link rel="shortcut icon" href="/staticfiles/images/github_logo.png"/>
+
+    <!--Imports the css from the static (files) folder-->
+    <link rel="stylesheet" href="staticfiles/css/main.css">
 
 </head>
 
@@ -25,7 +31,7 @@
 
   body {
 
-    background-color: #f6f6f6;
+    background-color: #FFFFFF;
     margin-top: 0;
     font-family: 'Open Sans', serif;
     font-weight:400;
@@ -33,17 +39,18 @@
 
 </style>
 
-<body>
+<!-- The ID here let us hightlight the chosen tab when active-->
+<body id="notes">
 
   <!--Navigation bar. We use jquery to export it. This may not work locally
   We have to setup a python server locally to test it.-->
-  <div id="navigation_bar">
+  <div id="header_bar">
 
   </div>
 
   <script>
   $(function(){
-    $("#navigation_bar").load("sidebar.html");
+    $("#header_bar").load("header.html");
   });
   </script>
   <!--End of Navigation bar-->
@@ -56,7 +63,7 @@
     <div class = "row">
 
       <!--This is the first column with a photo. It's shorter-->
-      <div class = "col-md-3" position: "sticky">
+      <div class = "col-md-3">
 
         <!-- Imports another html using jquery -->
         <div id="presentation_card"></div>
@@ -71,26 +78,63 @@
 
       <!--This is the second column in the first row-->
       <div class = "col-md-9">
-        <div class="card card-body h-100">
-          <h1> My notes </h1>
-          <hr>
-          <h4> ☛ In Portuguese: </h4>
-          <br>
 
-          <!-- Some personal notes-->
-          <p>• <a href="/assets/Solucion_rio_Moyses_2.pdf">Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig (2016)</p></a>
+        <h1> My notes </h1>
+        <hr>
+        Here you can find some stuff I wrote. For now most of them are in portuguese and were written while I was an undergraduate/highschool
+        student.
+        <br>
+        <br>
 
-          <p>• <a href="/assets/Solucion_rio_Moyses_3.pdf">Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto)</p></a>
+        <!-- Some personal notes-->
+        <h4> ☛ In English: </h4>
+        <br>
 
-          <p>• <a href="/assets/Mec_nica_Lagrangiana_e_Hamiltoniana.pdf">Mecânica Lagrangiana e Hamiltoniana (2017)</p></a>
+        <br>
+        <!-- Some personal notes-->
+        <h4> ☛ In Portuguese: </h4>
+        <br>
 
-          <p>• <a href="/assets/Tensores.pdf">Notas sobre tensores (2018)</p></a>
+        <!-- This div centralizes the list -->
+        <div style="text-align: center;">
+          <ul class="notes_list">
 
-          <p>• <a href="/assets/Uma_breve_introdu__o_ao_TikZ.pdf">Uma breve introdução ao TikZ (2015)</p></a>
+            <li class="notes_list"><figure>
+              <a href="/assets/Mec_nica_Lagrangiana_e_Hamiltoniana.pdf"><img class="notes_cover" src="/assets/Mec_nica_Lagrangiana_e_Hamiltoniana_cover.svg"></a>
+              <figcaption style="width: 350px; text-align: center;">Mecânica Lagrangiana e Hamiltoniana (2017)</figcaption>
+            </figure></li>
 
+            <!-- Gap between the two columns-->
+
+            <li class="notes_list"><figure>
+              <a href="/assets/Tensores.pdf"><img class="notes_cover" src="/assets/Tensores_cover.svg"></a>
+              <figcaption style="width: 350px; text-align: center;">Notas sobre tensores (2018)</figcaption>
+            </figure></li>
+
+            <!----------->
+
+            <li class="notes_list"><figure>
+              <a href="/assets/Solucion_rio_Moyses_2.pdf"><img class="notes_cover" src="/assets/Solucion_rio_Moyses_2_cover.svg"></a>
+              <figcaption style="width: 350px; text-align: center;">Solucionário Curso de Física Básica Volume 2 - H. M. Nussenzveig (2016)</figcaption>
+            </figure></li>
+
+            <!-- Gap between the two columns-->
+
+            <li class="notes_list"><figure>
+              <a href="/assets/Solucion_rio_Moyses_3.pdf"><img class="notes_cover" src="/assets/Solucion_rio_Moyses_3_cover.svg"></a>
+              <figcaption style="width: 350px; text-align: center;">Solucionário Curso de Física Básica Volume 3 - H. M. Nussenzveig (Incompleto)</figcaption>
+            </figure></li>
+
+            <!----------->
+
+            <li class="notes_list"><figure>
+              <a href="/assets/Uma_breve_introdu__o_ao_TikZ.pdf"><img class="notes_cover" src="/assets/Uma_breve_introdu__o_ao_TikZ_cover.svg"></a>
+              <figcaption style="width: 350px; text-align: center;">Uma breve introdução ao TikZ (2015)</figcaption>
+            </figure></li>
+
+          </ul>
         </div>
       </div>
-
     </div>
 
 </body>

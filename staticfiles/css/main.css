@@ -36,7 +36,7 @@ of the word*/
     width:150px;
     height:150px;
     border-radius: 50%;
-    box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 10px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -129,4 +129,35 @@ ul{
     display:block;
     transition: 0.5s;
   }
+}
+
+/*Highlights the active tab*/
+#home #nav_home a,
+#research #nav_research a,
+#notes #nav_notes a,
+#coding #nav_coding a,
+#miscellanea #nav_miscellanea a {
+    color:#4169e1;
+}
+
+/*Lets the ul tag divide the unordered list into two columns in the notes page*/
+.notes_list ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+/*Adds a marging in order to create a gap between the two columns*/
+.notes_list{
+  margin: 20px 20px;
+}
+
+/*Notes cover image frane*/
+.notes_cover{
+
+    width:340px;
+    height:490px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    padding: 5px;
 }
