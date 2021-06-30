@@ -1,7 +1,6 @@
 /*Overall*/
 *{
 
-  margin: 0;
   margin-right: -100px;
   padding: 0;
 }
@@ -160,4 +159,10 @@ ul{
     border-radius: 8px;
     border: 1px solid #bbb;
     padding: 5px;
+}
+
+ /* Adds a top margin to avoid overlay with the header. The size here should be the same of the header*/
+ /*I added the margin here instead of the body/the cointaner for simplicity*/
+#header_bar{
+  margin-top: 100px;
 }

@@ -10,6 +10,10 @@
 
 /*Navigation bar black background*/
 nav{
+    overflow: hidden; /*These for commands make the header sticky*/
+    position: fixed;
+    top: 0;
+    z-index: 99; /*Important to prevent overlay from the rest of the page!*/
     background: #282828;
     height: 100px;
     width: 100%;
