@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- The numerical .html file is simply a google verification to index this page on the search engine -->
+
+    <title>Gabriel O. Alves</title>
+    <meta charset="UTF-8"> <!--Adds UTF-8 so we don't get any errors with accents-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Imports the bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Page icon -->
+    <link rel="shortcut icon" href="/staticfiles/images/github_logo.png"/>
+
+    <!--Imports the css from the static (files) folder-->
+    <link rel="stylesheet" href="staticfiles/css/main.css">
+
+</head>
+
+<!--Light gray background-->
+<style>
+
+  /*Imports two different font styles. One for the menu and one for the text*/
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+  body {
+
+    background-color: #FFFFFF;
+    margin-top: 0;
+    font-family: 'Open Sans', serif;
+    font-weight:400;
+  }
+
+</style>
+
+<!-- The ID here let us hightlight the chosen tab when active-->
+<body id="presentations">
+
+  <!--Navigation bar. We use jquery to export it. This may not work locally
+  We have to setup a python server locally to test it.-->
+  <div id="header_bar">
+
+  </div>
+
+  <script>
+  $(function(){
+    $("#header_bar").load("header.html");
+  });
+  </script>
+  <!--End of Navigation bar-->
+
+  <!--Line break at the start of the page-->
+  <br>
+  <div class="container">
+
+    <!--This is the first row-->
+    <div class = "row">
+
+      <!--This is the first column with a photo. It's shorter-->
+      <div class = "col-md-3">
+
+        <!-- Imports another html using jquery -->
+        <div id="presentation_card"></div>
+
+        <script>
+        $(function(){
+          $("#presentation_card").load("card.html");
+        });
+        </script>
+
+      </div>
+
+      <!--This is the second column in the first row-->
+      <div class = "col-md-9">
+
+
+        <h1><b>Talks</b></h1>
+        <hr>
+        Here you can find some slides and videos from previous talks.
+        <br>
+        <br>
+
+        <!-- This div centralizes the list -->
+        <dl>
+          <dt> &#128483; 24/06/2021 </dt>
+          <dd> Brazilian Autumn Meeting - Bayesian estimation for collisional thermometry: <a href="assets/talks/EOSBF_Presentation.pdf">PDF</a> </dd>
+          <br>
+
+          <dt> &#127916; 19/05/2021 </dt>
+          <dd> Group Seminar - Bayesian estimation for collisional thermometry:<br> <iframe width="640" height="480" src="https://www.youtube.com/embed/_Ys_j5khjU4" frameborder="0" title="Bayesian Thermometry Group" allowfullscreen></iframe></dd>
+
+          <dt> &#128220; 24/06/2021 </dt>
+          <br>
+          <dd> VII Paraty Quantum Information School and Workshop - Critical properties of the Rabi Model:  <a href="assets/talks/Poster_paraty_2019.pdf">PDF</a>  </dd>
+        </dl>
+      </div>
+    </div>
+
+</body>
+
+</html>
