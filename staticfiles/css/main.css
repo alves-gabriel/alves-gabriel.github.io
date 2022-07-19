@@ -64,14 +64,14 @@ ul{
     height:33px;
 }
 
-/*Definitions for the social_lattes class*/
-.social_lattes-links ul, li{
+/*Definitions for the social_scholar class*/
+.social_scholar-links ul, li{
 
     list-style-type: none;
     display: inline-block;
 }
 
-.social_lattes{
+.social_scholar{
 
     width:33px;
     height:33px;
