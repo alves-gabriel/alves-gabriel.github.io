@@ -1,10 +1,10 @@
 # Foldr examples
 
-### Multiplying two number using (+)
+### Multiplying two numbers using (+)
 
-Multiplication between two numbers n and m can (only for the sake of the example, of course) be very naturally implemented with ```foldr```. We can i) build a function which constructs an array with m copies of a number n and ii) apply foldr and the (+) operator to this array.
+Multiplication between two numbers n and m can (only for the sake of the example, of course) be very naturally implemented with ```foldr```. We can i) build a function which constructs an array with m copies of a number n and ii) apply foldr and the (+) operator to this array. 
 
-```none
+```haskell
 Prelude> let mcopy m n | m < 0 = [] | otherwise = n:mcopy (m-1) n
 Prelude> mult m n = foldr (+) 0 (mcopy m n)
 Prelude> mcopy 5 2
@@ -14,9 +14,8 @@ Prelude> mult 5 2
 ```
 
 Note how the list is constructed _recursively_. This is is implemented through the function  ```mcopy```, whose first argument is the index of the list (to keep track of how many copies should be made), so we can call it recursively until the index reaches 0. Meanwhile the second argument is just the number being copied. ```foldr``` is then used to apply the (+) operators to this list, effectively performing the sum
-<p align="center">
-<img src="http://latex.codecogs.com/svg.latex?n&space;\times&space;m&space;=&space;\underbrace{n&plus;...&plus;&space;n}_{\text{m&space;times}}" title="http://latex.codecogs.com/svg.latex?n \times m = \underbrace{n+...+ n}_{\text{m times}}" />
-</p>
+
+$$n \times m = \underbrace{n+...+ n}_{\text{m times}}$$
 
 m times.
 
@@ -24,7 +23,7 @@ m times.
 
 This example somewhat highlights the difference between ```foldl``` and ```foldr```. Let's take the list [1, 2, 3, 4] as an example. Note that the reversed list can be written as:
 
-```none
+```haskell
 Prelude> 4:3:2:1:[]
 [4,3,2,1]
 ```
@@ -59,7 +58,7 @@ foldl ⊕ [1, 2, 3, 4] []
 Concretely:
 
 
-```
+```haskell
 *Main> rev = foldl (\x_rest x -> x : x_rest) []
 *Main> rev [1,2,3,4]
 [4,3,2,1]
@@ -71,4 +70,4 @@ Concretely:
 [1,2,3,4] -- Wrong!
 ```
 
-In order to use ```foldr``` we may use the append operator ```+++``` instead as shown above.
+In order to use ```foldr``` we may use the append operator ```++``` instead as shown above.

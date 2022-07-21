@@ -25,6 +25,22 @@
 
     <!--Imports the css from the static (files) folder-->
     <link rel="stylesheet" href="staticfiles/css/main.css">
+
+    <!--MathJax script. This must be integrated with zero-md in order to render the equations in the markdown. See: https://zerodevx.github.io/zero-md/recipes/-->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)'],
+          ],
+        },
+      };
+    </script>
+    <script
+      async
+      src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"
+    ></script>
     
 </head>
 
@@ -48,6 +64,10 @@
 <!-- The ID here let us hightlight the chosen tab when active-->
 <body id="coding">
 
+  <!------------------------------->
+  <!-----------SCRIPTS------------->
+  <!------------------------------->
+
   <!-- Here we use the zero-md web component. See: https://stackoverflow.com/questions/37770620/how-to-include-markdown-md-files-inside-html-files--->
   <!-- See also https://zerodevx.github.io/zero-md/basic-usage/-->
   <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
@@ -64,23 +84,6 @@
   }
   </style>
 
-  <!--Javascript for the anchor. This keeps the page in the same place/avoid scrolling-->
-  <!-- See https://stackoverflow.com/questions/1218034/html-anchor-link-with-no-scroll-or-jump -->
-
-  <script language="JavaScript" type="text/javascript">
-  <!--
-  function keepLocation(oldOffset) {
-    if (window.pageYOffset!= null){
-      st=oldOffset;
-    }
-    if (document.body.scrollWidth!= null){
-      st=oldOffset;
-    }
-    setTimeout('window.scrollTo(0,st)',10);
-  }
-  //-->
-  </script>
-
   <!--Navigation bar. We use jquery to export it. This may not work locally
   We have to setup a python server locally to test it.-->
   <div id="header_bar">
@@ -94,6 +97,10 @@
   </script>
   <!--End of Navigation bar-->
 
+  <!------------------------------->
+  <!-----------CONTENT------------->
+  <!------------------------------->
+
   <!--Line break at the start of the page-->
   <br>
   <div class="container">
@@ -106,7 +113,12 @@
       <div class = "container">
       <div class="position-fixed">
 
-         <b>Contents</b>
+        <!------------------------------>
+        <!--SIDEBAR AND PAGE SELECTION-->
+        <!------------------------------>
+
+         <!--Contents - "home button" for the conding page. It will be clicked/open by default.-->
+         <b><li class="tablinks" onclick="openTab(event, 'contents')" id="contents_button_default">Contents</li></b>
          <hr>
 
          <!--Haskell content-->
@@ -121,11 +133,13 @@
          <!--Post links-->
          <div class = "collapse" id = "haskell_content">
            <ul class="sidebar_list">
-               <li  id="fold_li"><a href="#fold_examples" onclick="keepLocation(window.pageYOffset);">Folding</a></li><br>
-               <li  id="echelon_li"><a href="#echelon" onclick="keepLocation(window.pageYOffset);">Gaussian elimination</a></li><br>
-               <li  id="typeclasses_li"><a href="#typeclasses_examples" onclick="keepLocation(window.pageYOffset);">Typeclasses (feat. Bubble sort)</a></li><br>
-               <li  id="record_syntax_li"><a href="#record_syntax" onclick="keepLocation(window.pageYOffset);">Record syntax</a></li><br>
-               <li  id="permutations_li"><a href="#permutations" onclick="keepLocation(window.pageYOffset);">Permutations</a></li><br>
+               <!--openTab is a .js routine.-->
+               <li class="tablinks" onclick="openTab(event, 'echelon')">Gaussian elimination</li><br>
+               <li class="tablinks" onclick="openTab(event, 'fold_examples')">Folding</li><br>
+               <li class="tablinks" onclick="openTab(event, 'lagrange')">Lagrange Interpolation</li><br>
+               <li class="tablinks" onclick="openTab(event, 'typeclasses_examples')">Typeclasses (feat. Bubble sort)</li><br>
+               <li class="tablinks" onclick="openTab(event, 'record_syntax')">Record syntax</li><br>
+               <li class="tablinks" onclick="openTab(event, 'permutations')">Permutations</li><br>
            </ul>
          </div>
 
@@ -142,8 +156,8 @@
          <!--Post links-->
          <div class = "collapse" id = "mathematica_content">
            <ul class="sidebar_list">
-               <li  id="josephus_li"><a href="#josephus" onclick="keepLocation(window.pageYOffset);">Josephus problem</a></li><br>
-               <li  id="newtonmethod_li"><a href="#newtonmethod" onclick="keepLocation(window.pageYOffset);">Newton's method</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'josephus')">Josephus problem</li><br>
+               <li class="tablinks" onclick="openTab(event, 'newtonmethod')">Newton's method</li><br>
 
            </ul>
          </div>
@@ -152,56 +166,121 @@
       </div>
       </div>
 
+      <!-------------------------->
+      <!--MARKDOWN PAGES/CONTENT-->
+      <!-------------------------->
+
       <!--This is the second column in the first row-->
       <div class = "col-md-9">
       <div style="text-align: justify">
 
-        <div class="tab_anchor">
-
+        <!----------->
         <!--Haskell-->
-        <div id="fold_examples">
+        <!----------->
 
-          <zero-md src="posts/haskell_examples/fold_examples.md"></zero-md>
+        <!--The class tabcontent is used in the tab selection routine. We hide/make active the containers with this class.-->
+        <!--The "no-shadow" property is EXTREMELY important here, otherwise MathJax will not work-->
+        <div id="contents" class="tabcontent">
+          <zero-md src="posts/contents.md" no-shadow></zero-md>
           <br><br>
 
         </div>
 
-        <div id="echelon">
-          <zero-md src="posts/haskell_examples/echelon.md"></zero-md>
+        <div id="echelon" class="tabcontent">
+          <zero-md src="posts/haskell_examples/echelon.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="typeclasses_examples">
-          <zero-md src="posts/haskell_examples/typeclasses_examples.md"></zero-md>
+        <div id="fold_examples" class="tabcontent">
+
+          <zero-md src="posts/haskell_examples/fold_examples.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="record_syntax">
-          <zero-md src="posts/haskell_examples/record_syntax.md"></zero-md>
+        <div id="lagrange" class="tabcontent">
+
+          <zero-md src="posts/haskell_examples/lagrange.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="permutations">
-          <zero-md src="posts/haskell_examples/permutations.md"></zero-md>
+        <div id="typeclasses_examples" class="tabcontent">
+          <zero-md src="posts/haskell_examples/typeclasses_examples.md" no-shadow></zero-md>
           <br><br>
         </div>
 
+        <div id="record_syntax" class="tabcontent">
+          <zero-md src="posts/haskell_examples/record_syntax.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <div id="permutations" class="tabcontent">
+          <zero-md src="posts/haskell_examples/permutations.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <!--------------->
         <!--Mathematica-->
-        <div id="josephus">
-          <zero-md src="posts/mathematica_examples/josephus.md"></zero-md>
+        <!--------------->
+        <div id="josephus" class="tabcontent">
+          <zero-md src="posts/mathematica_examples/josephus.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="newtonmethod">
-          <zero-md src="posts/mathematica_examples/newtonmethod.md"></zero-md>
+        <div id="newtonmethod" class="tabcontent">
+          <zero-md src="posts/mathematica_examples/newtonmethod.md" no-shadow></zero-md>
           <br><br>
-        </div>
-
         </div>
 
       </div>
       </div>
     </div>
+
+  <!------------------------------->
+  <!-----------SCRIPTS------------->
+  <!------------------------------->
+
+  <!--Script for tab selection. We select each page/post as a tab. Note the classes tabcontent (page to be displayed) and tablinks (tab selection) -->
+  <!--Script from: https://www.w3schools.com/howto/howto_js_tabs.asp -->
+  <!--This has go at the end of the code so the default click at the end of script works.-->
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // This is script makes one of the tabs to be chosen by default
+    // Gets the element with id="contents", which is the home for the coding page
+    document.getElementById("contents_button_default").click();
+  </script>
+
+  <!-- Load the MathJax library AFTER markdown is rendered -->
+  <!-- We must use this script in order to integrate zero-md with MathJax. This loop does that for every element in the class tabcontent, using their id.
+  We can use this loop to automate the process. This way we don't have to do this manually for each page. Note that tabcontent return the id of each container
+  with the class "tabcontent", so we get tabcontent = {"contents", "echelon", "josephus"},... etc-->
+  <script>
+    var i, tabcontent;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].addEventListener('zero-md-rendered', () => {
+              let el = document.createElement('script')
+              el.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'
+              document.head.appendChild(el)
+            })
+    }
+  </script>
 
 </body>
 

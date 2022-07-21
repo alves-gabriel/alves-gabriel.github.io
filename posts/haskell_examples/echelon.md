@@ -2,30 +2,28 @@
 
 Here we show how Haskell can be used to obtain the echelon form of a matrix through Gaussian elimination. Albeit several approaches are possible, we focus on a strategy which uses ```foldr``` to implement the algorithm. For that, let us consider the matrix:
 
-<p align="center">
-<img src="http://latex.codecogs.com/svg.latex?
-M=\begin{matrix}\begin{pmatrix}
-1&space;&&space;2&space;&&space;3\\
-4&space;&&space;5&space;&&space;6\\
-5&space;&&space;7&space;&&space;8
+$$
+M=
+\begin{matrix}
+\begin{pmatrix}
+1 & 2 & 3\\\\4 & 5 & 6\\\\5 & 7 & 8
 \end{pmatrix}
-\end{matrix}.
-"/></p>
+\end{matrix}
+$$
 
 We begin by constructing an elementary function called `subRow` which eliminates the leading number in a row. Given two rows
-<img src="http://latex.codecogs.com/svg.latex?(x_1,&space;...,&space;x_m)&space;"/> and <img src="http://latex.codecogs.com/svg.latex?(y_1,&space;...,&space;y_m)&space;"/>, we can eliminate the leading coefficient <img src="http://latex.codecogs.com/svg.latex?y_1"/>  in the second row by performing the operation:
+$(x_1, ..., x_m)$ and $(y_1, ..., y_m)$, we can eliminate the leading coefficient $y_1$ in the second row by performing the operation:
 
-<p align="center">
-<img src="http://latex.codecogs.com/svg.latex?
-(y_1,&space;...,&space;y_m)&space;
-\rightarrow&space;
-(y_1,&space;...,&space;y_m)&space;&space;-&space;
-\frac{y_1}{x_1}&space;(x_1,&space;...,&space;x_m).
-"/></p>
+$$
+(y_1, ..., y_m) 
+\rightarrow 
+(y_1, ..., y_m)  - 
+\frac{y_1}{x_1} (x_1, ..., x_m).
+$$
 
 In the notation used below we eliminate the leading term from ```row2```:
 
-```Haskell
+```haskell
 subRow :: [Float] -> [Float] -> [Float]
 subRow row1 row2
   | head row1 /= 0  = zipWith (\x y-> x - (head row2)/(head row1)*y) row2　row1
@@ -47,7 +45,7 @@ eliminate matrix row =
   matrix ++ [foldr subRow row (reverse $ matrix)]
 ```
 
-This is the step where we iteratively perform the Gaussian elimination between a row in the matrix and all the previous rows (which already went through Gaussian elimination). To see that, note how the fold works here. Given the matrix rows `matrix = [row1, ..., rowN]` and `row`, what we get after applying `eliminate` is ` [row1, ..., rowN, row']`, where `row' = subRow ( ... subRow (subRow row row1) row2 ... ) rowN`; i.e. `row'` is just `row` after we eliminate its <img src="http://latex.codecogs.com/svg.latex?n"/> leading coefficients using the <img src="http://latex.codecogs.com/svg.latex?n"/> previous rows.
+This is the step where we iteratively perform the Gaussian elimination between a row in the matrix and all the previous rows (which already went through Gaussian elimination). To see that, note how the fold works here. Given the matrix rows `matrix = [row1, ..., rowN]` and `row`, what we get after applying `eliminate` is ` [row1, ..., rowN, row']`, where `row' = subRow ( ... subRow (subRow row row1) row2 ... ) rowN`; i.e. `row'` is just `row` after we eliminate its $n$ leading coefficients using the $n$ previous rows.
 
 For our desired matrix these iterations should be:
 

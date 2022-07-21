@@ -11,20 +11,16 @@ perm([1, 2, 3]) = [1: perm([2, 3]), 2: perm([1, 3]), 3: perm([1, 2])]
 
 The term `1: perm([2, 3])`, for example, would yield the permutations `[1, 2, 3]` and `[1, 3, 2]`
 
-Hence, we can, given a list &nbsp; <!--This is an extra space-->
-<img src="http://latex.codecogs.com/svg.latex?
-\ell = (l_1, l_2, ..., l_n)"/> &nbsp;, construct the following recurrence for its permutations:
+Hence, we can, given a list $\ell = (l_1, l_2, ..., l_n)$, construct the following recurrence for its permutations:
 
- <p align="center">
- <img src="http://latex.codecogs.com/svg.latex?
+$$
  \mathcal{P}(\ell) = (l_1, \mathcal{P}(l_2, ..., l_n))
  +(l_2, \mathcal{P}(l_1, ..., l_n))
  +...
  +(l_n, \mathcal{P}(l_1, ..., l_{n-1})).
- "/>
- </p>
+$$
 
-Naturally, the base case is &nbsp; <img src="http://latex.codecogs.com/svg.latex?\mathcal{P}(\o)= \o"/> &nbsp;for an empty list.
+Naturally, the base case is $\mathcal{P}(\emptyset)= \emptyset$ for an empty list.
 
 We should be able to do two things in order to implement this algorithm: **i)** find out how to remove the &nbsp; <img src="http://latex.codecogs.com/svg.latex?k"/>-th element in a list, in order to obtain the desired sub-lists, and we should also be able to know **ii)** how to implement the recurrence above.  The following function implements the first routine:
 
@@ -47,14 +43,14 @@ removeMap lst = map (\func -> func lst) f' where
 
 One way to interpret the helper function `f'` is as a "list of partial functions", namely `f' = [removeAt 0, removeAt 1, removeAt 2, ..., removeAt n]`. Then, we just need to apply each one of them to our original list. This is precisely what the line `removeMap lst = map (\func -> func lst) f'` does. This line applies each of the partial functions to the original list, yielding `[removeAt 0 lst, removeAt 1 lst, removeAt 2 lst, ..., removeAt n lst]`. This is actually a pretty useful strategy to apply map to a function with several arguments! If we feed our original list to this function we get the desired output:
 
-```none
+```haskell
 *Main> removeMap [1, 2, 3]
 [[2,3],[1,3],[1,2]]
 ```
 
 Finally, the implementation of the recursion is:
 
-```Haskell
+```haskell
 -- Returns all the permutations. This can be done recursively
 perm :: [a] -> [[a]]
 perm [] = [[]]
@@ -62,7 +58,7 @@ perm lst = concat $ zipWith (\x -> map (x:)) lst (map perm (removeMap lst))
 ```
 Here `map perm (removeMap lst)` returns the list `[perm([2, 3]), perm([1, 3]), perm([1, 2])]`, in our example. We should now prepend the list elements `[1, 2, 3]` to these sub-lists in order to get terms like `1:perm([2, 3])` and so on. The function `zipWith` from the prelude associate each term with its sub-list, in other words, it associates `1` with `perm([2, 3])`, `2` with `perm([1, 3])` and so on. Finally, the anonymous function `(\x -> map (x:))` is what allows us to prepend `1` to every sub-list in  `perm([2, 3])`:
 
-```none
+```haskell
 *Main> perm [2, 3]
 [[2,3],[3,2]]
 *Main> (\x -> map (x:)) 1 (perm [2, 3])
@@ -71,7 +67,7 @@ Here `map perm (removeMap lst)` returns the list `[perm([2, 3]), perm([1, 3]), p
 
 The function `concat` simply flattens the results, guaranteeing that we get a type signature ```[[a]]``` instead of `[[[a]]]`. We can now see this function in action:
 
-```none
+```haskell
 *Main> perm [1, 2, 3]
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 *Main> perm [1]

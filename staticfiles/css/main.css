@@ -174,3 +174,24 @@ ul{
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
+/* Style the tab content. Makes them invisible by default.*/
+.tabcontent {
+  display: none;
+}
+
+/* List elements change their color when selected. This is applies to the "sidebar_list" class*/
+.sidebar_list li.active {
+  color: #4169e1;
+}
+
+/* Animation effect for tabs*/
+.tabcontent {
+  animation: fadeIn 2s; /* Fading effect takes 1 second */
+}
+
+/* Goes from transparent to full opacity content*/
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
