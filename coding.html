@@ -120,7 +120,7 @@
          <!--Contents - "home button" for the conding page. It will be clicked/open by default.-->
          <!--I am using anchoring here to make indexing to different pages easier. Note that # refers to the current page, and #anchor to the anchor-->
          <!--The flag _tab is used to disthinguish between the page/text id and the link id-->
-         <b><li class="tablinks" onclick="openTab(event, 'contents')" id="_tab"><a href="" style="color: inherit;">Contents<a></li></b>
+         <b><li class="tablinks" onclick="openTab(event, '')" id="_tab"><a href="" style="color: inherit;">Contents<a></li></b>
          <hr>
 
          <!--Haskell content-->
@@ -200,7 +200,7 @@
 
         <!--The class tabcontent is used in the tab selection routine. We hide/make active the containers with this class.-->
         <!--The "no-shadow" property is EXTREMELY important here, otherwise MathJax will not work-->
-        <div id="contents" class="tabcontent">
+        <div id="_cont" class="tabcontent">
           <zero-md src="posts/contents.md" no-shadow></zero-md>
           <br><br>
 
