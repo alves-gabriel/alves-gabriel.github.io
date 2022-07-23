@@ -119,7 +119,8 @@
 
          <!--Contents - "home button" for the conding page. It will be clicked/open by default.-->
          <!--I am using anchoring here to make indexing to different pages easier. Note that # refers to the current page, and #anchor to the anchor-->
-         <b><li class="tablinks" onclick="openTab(event, 'contents')" id="contents_button_default"><a href="" style="color: inherit;">Contents<a></li></b>
+         <!--The flag _tab is used to disthinguish between the page/text id and the link id-->
+         <b><li class="tablinks" onclick="openTab(event, 'contents')" id="_tab"><a href="" style="color: inherit;">Contents<a></li></b>
          <hr>
 
          <!--Haskell content-->
@@ -135,13 +136,26 @@
          <div class = "collapse" id = "haskell_content">
            <ul class="sidebar_list">
 
-               <!--openTab is a .js routine. color:inherit leaves the color of the text unchanged-->
-               <li class="tablinks" onclick="openTab(event, 'echelon')"><a href="#gaussian_elimination" style="color: inherit;">Gaussian elimination</a></li><br>
-               <li class="tablinks" onclick="openTab(event, 'fold_examples')"><a href="#fold_examples_haskell" style="color: inherit;">Folding</a></li><br>
-               <li class="tablinks" onclick="openTab(event, 'lagrange')"><a href="#lagrange_interpolation" style="color: inherit;">Lagrange Interpolation</a></li><br>
-               <li class="tablinks" onclick="openTab(event, 'typeclasses_examples')"><a href="#typeclasses_haskell_feat_bubble_sort" style="color: inherit;">Typeclasses (feat. Bubble sort)</a></li><br>
-               <li class="tablinks" onclick="openTab(event, 'record_syntax')"><a href="#record_syntax_haskell" style="color: inherit;">Record syntax</a></li><br>
-               <li class="tablinks" onclick="openTab(event, 'permutations')"><a href="#permutations_haskell" style="color: inherit;">Permutations</a></li><br>
+              <!-- openTab is a .js routine. color:inherit leaves the color of the text unchanged-->
+              <!-- The "_cont" flag prevents anchoring movement since the ids are different. Since we want the .js to scroll to the top of the page, not the anchor (which has a weird offset)-->
+              <li class="tablinks" onclick="openTab(event, 'gaussian_elimination_haskell')" id="gaussian_elimination_haskell_tab">
+                <a href="#gaussian_elimination_haskell" style="color: inherit;">Gaussian Elimination</a>
+              </li><br>
+               <li class="tablinks" onclick="openTab(event, 'fold_examples')" id="fold_examples_tab">
+                <a href="#fold_examples" style="color: inherit;">Folding</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'lagrange')" id="lagrange_tab">
+                <a href="#lagrange" style="color: inherit;">Lagrange Interpolation</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'typeclasses_examples')" id="typeclasses_examples_tab">
+                <a href="#typeclasses_examples" style="color: inherit;">Typeclasses (feat. Bubble sort)</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'record_syntax')" id="record_syntax_tab">
+                <a href="#record_syntax" style="color: inherit;">Record syntax</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'permutations_haskell')" id="permutations_haskell_tab">
+                <a href="#permutations_haskell" style="color: inherit;">Permutations</a>
+              </li><br>
            </ul>
          </div>
 
@@ -158,8 +172,12 @@
          <!--Post links-->
          <div class = "collapse" id = "mathematica_content">
            <ul class="sidebar_list">
-               <li class="tablinks" onclick="openTab(event, 'josephus')"><a href="#josephus_problem_mathematica" style="color: inherit;">Josephus problem</a></li><br>
-               <li class="tablinks" onclick="openTab(event, 'newtonmethod')"><a href="#newton_method_mathematica" style="color: inherit;">Newton's method</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'josephus')" id="josephus_tab">
+                <a href="#josephus" style="color: inherit;">Josephus problem</a>
+              </li><br>
+               <li class="tablinks" onclick="openTab(event, 'newtonmethod')" id="newtonmethod_tab">
+                <a href="#newtonmethod" style="color: inherit;">Newton's method</a>
+              </li><br>
 
            </ul>
          </div>
@@ -188,47 +206,47 @@
 
         </div>
 
-        <div id="echelon" class="tabcontent">
-          <zero-md src="posts/haskell_examples/echelon.md" no-shadow></zero-md>
+        <div id="gaussian_elimination_haskell_cont" class="tabcontent">
+          <zero-md src="posts/haskell_examples/gaussian_elimination_haskell.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="fold_examples" class="tabcontent">
+        <div id="fold_examples_cont" class="tabcontent">
 
           <zero-md src="posts/haskell_examples/fold_examples.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="lagrange" class="tabcontent">
+        <div id="lagrange_cont" class="tabcontent">
 
           <zero-md src="posts/haskell_examples/lagrange.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="typeclasses_examples" class="tabcontent">
+        <div id="typeclasses_examples_cont" class="tabcontent">
           <zero-md src="posts/haskell_examples/typeclasses_examples.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="record_syntax" class="tabcontent">
+        <div id="record_syntax_cont" class="tabcontent">
           <zero-md src="posts/haskell_examples/record_syntax.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="permutations" class="tabcontent">
-          <zero-md src="posts/haskell_examples/permutations.md" no-shadow></zero-md>
+        <div id="permutations_haskell_cont" class="tabcontent">
+          <zero-md src="posts/haskell_examples/permutations_haskell.md" no-shadow></zero-md>
           <br><br>
         </div>
 
         <!--------------->
         <!--Mathematica-->
         <!--------------->
-        <div id="josephus" class="tabcontent">
+        <div id="josephus_cont" class="tabcontent">
           <zero-md src="posts/mathematica_examples/josephus.md" no-shadow></zero-md>
           <br><br>
         </div>
 
-        <div id="newtonmethod" class="tabcontent">
+        <div id="newtonmethod_cont" class="tabcontent">
           <zero-md src="posts/mathematica_examples/newtonmethod.md" no-shadow></zero-md>
           <br><br>
         </div>
@@ -248,7 +266,7 @@
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks;
 
-      tabcontent = document.getElementsByClassName("tabcontent"); // Tab content - i.e. markdowns to be displayed
+      tabcontent = document.getElementsByClassName("tabcontent"); // Tab content - i.e. markdowns to be displayed.
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
@@ -258,15 +276,19 @@
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
 
-      document.getElementById(tabName).style.display = "block"; // Blocks all the other tabs
+      // Blocks all the other tabs. I am using a "_cont" flag to make the anchors different from the real ids in the markdown content, 
+      // this avoids unwanted offset in the anchoring.
+      document.getElementById(tabName+'_cont').style.display = "block"; 
       evt.currentTarget.className += " active"; // Makes the current one active
 
-      $('html,body').scrollTop(0); //Jumps to the top of the page
+      window.scrollTo(0, 0); // Jumps to the top of the page when clicking on a post in the sidebar
     }
 
-    // This is script makes one of the tabs to be chosen by default
-    // Gets the element with id="contents", which is the home for the coding page
-    document.getElementById("contents_button_default").click();
+    // This is script makes one of the tabs to be chosen according to the url
+    // Gets the element with id=anchored_tab to be open. So, if the page is .../coding#post.html, we will open the page
+    // with the page #post active. If we have .../coding.html, we open the default page for the coding section. slice(1) removes the # in the string
+    var anchored_tab = $(location).attr('hash').slice(1);
+    document.getElementById(anchored_tab+'_tab').click(); // I put a little "_tab" flag here to distinguish between the links and the pages
   </script>
 
   <!-- Load the MathJax library AFTER markdown is rendered -->
