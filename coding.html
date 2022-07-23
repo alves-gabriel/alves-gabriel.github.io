@@ -83,7 +83,7 @@
     display: block;
   }
   </style>
-
+  
   <!--Navigation bar. We use jquery to export it. This may not work locally
   We have to setup a python server locally to test it.-->
   <div id="header_bar">
@@ -118,7 +118,8 @@
         <!------------------------------>
 
          <!--Contents - "home button" for the conding page. It will be clicked/open by default.-->
-         <b><li class="tablinks" onclick="openTab(event, 'contents')" id="contents_button_default">Contents</li></b>
+         <!--I am using anchoring here to make indexing to different pages easier. Note that # refers to the current page, and #anchor to the anchor-->
+         <b><li class="tablinks" onclick="openTab(event, 'contents')" id="contents_button_default"><a href="" style="color: inherit;">Contents<a></li></b>
          <hr>
 
          <!--Haskell content-->
@@ -133,13 +134,14 @@
          <!--Post links-->
          <div class = "collapse" id = "haskell_content">
            <ul class="sidebar_list">
-               <!--openTab is a .js routine.-->
-               <li class="tablinks" onclick="openTab(event, 'echelon')">Gaussian elimination</li><br>
-               <li class="tablinks" onclick="openTab(event, 'fold_examples')">Folding</li><br>
-               <li class="tablinks" onclick="openTab(event, 'lagrange')">Lagrange Interpolation</li><br>
-               <li class="tablinks" onclick="openTab(event, 'typeclasses_examples')">Typeclasses (feat. Bubble sort)</li><br>
-               <li class="tablinks" onclick="openTab(event, 'record_syntax')">Record syntax</li><br>
-               <li class="tablinks" onclick="openTab(event, 'permutations')">Permutations</li><br>
+
+               <!--openTab is a .js routine. color:inherit leaves the color of the text unchanged-->
+               <li class="tablinks" onclick="openTab(event, 'echelon')"><a href="#gaussian_elimination" style="color: inherit;">Gaussian elimination</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'fold_examples')"><a href="#fold_examples_haskell" style="color: inherit;">Folding</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'lagrange')"><a href="#lagrange_interpolation" style="color: inherit;">Lagrange Interpolation</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'typeclasses_examples')"><a href="#typeclasses_haskell_feat_bubble_sort" style="color: inherit;">Typeclasses (feat. Bubble sort)</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'record_syntax')"><a href="#record_syntax_haskell" style="color: inherit;">Record syntax</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'permutations')"><a href="#permutations_haskell" style="color: inherit;">Permutations</a></li><br>
            </ul>
          </div>
 
@@ -156,8 +158,8 @@
          <!--Post links-->
          <div class = "collapse" id = "mathematica_content">
            <ul class="sidebar_list">
-               <li class="tablinks" onclick="openTab(event, 'josephus')">Josephus problem</li><br>
-               <li class="tablinks" onclick="openTab(event, 'newtonmethod')">Newton's method</li><br>
+               <li class="tablinks" onclick="openTab(event, 'josephus')"><a href="#josephus_problem_mathematica" style="color: inherit;">Josephus problem</a></li><br>
+               <li class="tablinks" onclick="openTab(event, 'newtonmethod')"><a href="#newton_method_mathematica" style="color: inherit;">Newton's method</a></li><br>
 
            </ul>
          </div>
@@ -246,18 +248,20 @@
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks;
 
-      tabcontent = document.getElementsByClassName("tabcontent");
+      tabcontent = document.getElementsByClassName("tabcontent"); // Tab content - i.e. markdowns to be displayed
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
 
-      tablinks = document.getElementsByClassName("tablinks");
+      tablinks = document.getElementsByClassName("tablinks"); // Tab links - the tabs themselves, on the sidebar/top
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
 
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
+      document.getElementById(tabName).style.display = "block"; // Blocks all the other tabs
+      evt.currentTarget.className += " active"; // Makes the current one active
+
+      $('html,body').scrollTop(0); //Jumps to the top of the page
     }
 
     // This is script makes one of the tabs to be chosen by default
