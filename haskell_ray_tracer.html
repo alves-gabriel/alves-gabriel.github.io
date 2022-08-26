@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- The numerical .html file is simply a google verification to index this page on the search engine -->
+    <title>Codes</title>
+
+    <!--Adds UTF-8 so we don't get any errors with accents-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Imports the bootstrap. See: https://getbootstrap.com/docs/4.3/getting-started/download/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+    <!-- Page icon -->
+    <link rel="shortcut icon" href="../staticfiles/images/github_logo.png"/>
+
+    <!--Imports the css from the static (files) folder-->
+    <link rel="stylesheet" href="../staticfiles/css/main.css">
+
+    <!--MathJax script. This must be integrated with zero-md in order to render the equations in the markdown. See: https://zerodevx.github.io/zero-md/recipes/-->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)'],
+          ],
+        },
+      };
+    </script>
+    <script
+      async
+      src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"
+    ></script>
+    
+</head>
+
+<!--Light gray background-->
+<style>
+
+  /*Imports two different font styles. One for the menu and one for the text*/
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+  body {
+
+    background-color: #FFFFFF;
+    margin-top: 0;
+    font-family: 'Open Sans', serif;
+    font-weight:400;
+  }
+
+</style>
+
+<!-- The ID here let us hightlight the chosen tab when active-->
+<body id="coding">
+
+  <!------------------------------->
+  <!-----------SCRIPTS------------->
+  <!------------------------------->
+
+  <!-- Here we use the zero-md web component. See: https://stackoverflow.com/questions/37770620/how-to-include-markdown-md-files-inside-html-files--->
+  <!-- See also https://zerodevx.github.io/zero-md/basic-usage/-->
+  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+  <!--These classes are used to anchord the links on the sidebar to the markdown pages-->
+  <style>
+  .tab_anchor div {
+    display: none;
+  }
+
+  .tab_anchor div:target {
+    display: block;
+  }
+  </style>
+  
+  <!--Navigation bar. We use jquery to export it. This may not work locally
+  We have to setup a python server locally to test it.-->
+  <div id="header_bar">
+
+  </div>
+
+  <script>
+  $(function(){
+    $("#header_bar").load("/../header.html");
+  });
+  </script>
+  <!--End of Navigation bar-->
+
+  <!------------------------------->
+  <!-----------CONTENT------------->
+  <!------------------------------->
+
+  <!--Line break at the start of the page-->
+  <br>
+  <div class="container">
+
+    <!--This is the first row-->
+    <div class = "row">
+
+      <!--This is the first column with the sidebar menu/table of contents--->
+      <div class = "col-md-3">
+      <div class = "container">
+      <div class="position-fixed">
+
+        <!------------------------------>
+        <!--SIDEBAR AND PAGE SELECTION-->
+        <!------------------------------>
+
+        <b><li class="tablinks">Ray tracing with Haskell</li></b>
+        <hr>
+
+         <!--Post links-->
+         <div>
+           <ul class="sidebar_list">
+
+              <!-- openTab is a .js routine. color:inherit leaves the color of the text unchanged-->
+              <!-- The "_cont" flag prevents anchoring movement since the ids are different. Since we want the .js to scroll to the top of the page, not the anchor (which has a weird offset)-->
+              <li class="tablinks" onclick="openTab(event, '')" id="_tab">
+                <a href="#_cont" style="color: inherit;">Introduction</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'partI')" id="partI_tab">
+                <a href="#partI_cont" style="color: inherit;">Part I - Setting everything up</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'partII')" id="partII_tab">
+                <a href="#partII_cont" style="color: inherit;">Part II - Shapes</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'partIII')" id="partII_tab">
+                <a href="#partIII_cont" style="color: inherit;">Part III - Materials</a>
+              </li><br>
+              <li class="tablinks" onclick="openTab(event, 'partIV')" id="partII_tab">
+                <a href="#partIV_cont" style="color: inherit;">Part IV - Final Scene</a>
+              </li><br>
+              <b><li class="tablinks"><a href="/coding.html" style="color: inherit;">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+              </a></li></b>
+           </ul>
+         </div>
+
+      </div>
+      </div>
+      </div>
+
+      <!-------------------------->
+      <!--MARKDOWN PAGES/CONTENT-->
+      <!-------------------------->
+
+      <!--This is the second column in the first row-->
+      <div class = "col-md-9">
+      <div style="text-align: justify">
+
+        <div id="_cont" class="post_chapters">
+          <zero-md src="/haskell_ray_tracer/introduction.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <div id="partI_cont" class="post_chapters">
+          <zero-md src="/haskell_ray_tracer/partI.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <div id="partII_cont" class="post_chapters">
+          <zero-md src="haskell_ray_tracer/partII.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <div id="partIII_cont" class="post_chapters">
+
+          <zero-md src="haskell_ray_tracer/partIII.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <div id="partIV_cont" class="post_chapters">
+          <zero-md src="haskell_ray_tracer/partIV.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+        <div id="references_cont" class="post_chapters">
+          <zero-md src="haskell_ray_tracer/references.md" no-shadow></zero-md>
+          <br><br>
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+  <!------------------------------->
+  <!-----------SCRIPTS------------->
+  <!------------------------------->
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+
+      tablinks = document.getElementsByClassName("tablinks"); // Tab links - the tabs themselves, on the sidebar/top
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName+'_cont').style.display = "block"; 
+      evt.currentTarget.className += " active"; // Makes the current one active
+
+    }
+
+    var anchored_tab = $(location).attr('hash').slice(1);
+    document.getElementById(anchored_tab+'_tab').click(); 
+    document.getElementById(anchored_tab+'_tab2').click(); 
+  </script>
+
+  <script>
+    var i, tabcontent;
+
+    tabcontent = document.getElementsByClassName("post_chapters");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].addEventListener('zero-md-rendered', () => {
+              let el = document.createElement('script')
+              el.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'
+              document.head.appendChild(el)
+            })
+    }
+  </script>
+
+  <!-- Colors the sidebar elements/tabs as we go through the sections.-->
+  <script>
+  window.onscroll = function (e) {  
+    offset = -50
+    scrollPos = $(window).scrollTop();       // Gets the current position of the window
+    sec1Pos = $('#Part1Title').offset().top; // Gets the current position of the section
+    sec2Pos = $('#Part2Title').offset().top;
+    sec3Pos = Infinity;
+
+    if (scrollPos < sec1Pos + offset){
+      document.getElementById('_tab').click(); 
+    }
+    else if (scrollPos < sec2Pos + offset){
+      document.getElementById('partI_tab').click(); 
+    }
+    else if (scrollPos < sec3Pos + offset){
+      document.getElementById('partII_tab').click(); 
+    }
+  } 
+  </script>
+
+</body>
+
+</html>
