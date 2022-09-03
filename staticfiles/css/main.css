@@ -152,11 +152,20 @@ ul{
   margin: 20px 20px;
 }
 
+/*Removes horizontal margin in mobile*/
+@media (max-device-width: 1000px) {
+  .notes_list{
+    margin: 20px 00px !important; 
+    text-align: center !important;
+  }
+}
+
 /*Notes cover image frane*/
 .notes_cover{
 
+    max-width: 80%; /*Limits the width in cellphones*/
     width:340px;
-    height:490px;
+    aspect-ratio: 0.71 ;  /*We use the aspect ratio of a A4 sheet to define the height*/
     border-radius: 8px;
     border: 1px solid #bbb;
     padding: 5px;
@@ -231,4 +240,17 @@ oldefault lidefault:before {
   content: counter(item) ". "; 
   counter-increment: item; 
   font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+  iframe {
+      max-width: 100% !important;
+      width : 640 !important;
+      height : 480 !important;
+  }
+}
+
+iframe {
+  width : 640 ;
+  height : 480 ;
 }
