@@ -97,13 +97,13 @@ ul{
 }
 
 /*Margin between rows for mobile*/
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .col-md-4,.col-md-5, .col-md-9 {
     margin-left: 0px; /*Removes the margin in the mobile view, since we also remove the presentation card!*/
     margin-bottom: 20px;
   }
   .col-md-3{
-    width: 0px;
+    width: 0px!IMPORTANT;
   }
 }
 
@@ -115,8 +115,8 @@ ul{
   width: 50%;
 }
 
-/*Removes the presentation car in mobile*/
-@media (max-width: 1000px) {
+/*Removes the presentation card in mobile. We use 768px to math the limit for col-md-3 on bootstrap*/
+@media (max-width: 768px) {
   #presentation_card{
     display:none;
     transition: 0.5s;
@@ -126,6 +126,29 @@ ul{
     width: 50%;
     margin: 0 auto;
     display:block;
+    transition: 0.5s;
+  }
+}
+
+/*Makes the sidebar fixed in the desktop version*/
+@media (min-width: 768px) {
+  #code_sidebar{
+    position: fixed;
+    width: 15%;
+    top: 15%;
+    left: 5%;
+  }
+}
+
+/*Puts the "codes" section sidebar at the top instead of the left. Removes the fixed positioning.*/
+@media (max-width: 768px) {
+
+  #code_sidebar{
+    position: static;
+    width: 350px;
+    /* padding-right:-100%; */
+    margin: 0 auto;
+    display: block;
     transition: 0.5s;
   }
 }

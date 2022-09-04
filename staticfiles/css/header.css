@@ -61,11 +61,12 @@ a.active,a:hover{
 
 /*Menu button*/
 .check_button{
+    position: absolute;
     font-size: 30px;
     color: white;
     float: right;
     line-height: 100px; /*Should be the same height as the title*/
-    margin-right: 30px;
+    margin-left: 80%;
     cursor: pointer;
     display: none; /*Hides the icon*/
 }
@@ -114,11 +115,11 @@ This appears id="check" in the HTML*/
         font-size: 20px;
     }
 
-    /*Makes the item bigger when hovered*/
+    /*Change the behaviour of the link when it's hovered over*/
     a:hover, a.active{
         background: none;
         color: white;
-        font-size: 30px;
+        /* font-size: 30px; */ /*Makes the item bigger when hovered*/
         color: #4169e1;
     }
 
