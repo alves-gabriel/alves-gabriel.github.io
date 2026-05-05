@@ -1,0 +1,27 @@
+---
+layout: default
+mathjax: true
+---
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 layout-side-column">
+      <aside id="code_sidebar">
+        <p><b><a href="{{ '/coding.html' | relative_url }}">Contents</a></b></p>
+        <hr>
+        {% assign groups = site.coding | group_by: "section" | sort: "name" %}
+        {% for group in groups %}
+          <p><b>{{ group.name }}</b></p>
+          <ul class="sidebar_list">
+            {% assign items = group.items | sort: "order" %}
+            {% for item in items %}
+              <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </aside>
+    </div>
+    <div class="col-md-9 content-column">
+      {{ content }}
+    </div>
+  </div>
+</div>

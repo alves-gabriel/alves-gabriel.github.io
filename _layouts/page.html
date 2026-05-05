@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    {% if page.show_profile_card %}
+    <div class="col-md-3 profile-column">
+      {% include profile-card.html %}
+    </div>
+    <div class="col-md-9 content-column">
+      <div id="presentation_card_mobile">
+        {% include profile-card.html %}
+      </div>
+    {% else %}
+    <div class="col-md-12 content-column">
+    {% endif %}
+      {{ content }}
+    </div>
+  </div>
+</div>

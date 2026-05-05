@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 layout-side-column notes-side-spacer" aria-hidden="true"></div>
+    <div class="col-md-9 content-column">
+      {{ content }}
+
+      {% assign english_notes = site.notes | where: "language", "en" | sort: "order" %}
+      {% assign portuguese_notes = site.notes | where: "language", "pt" | sort: "order" %}
+
+      <section class="notes-panel">
+        <p class="section-title">In English</p>
+        <div class="notes-list">
+          {% for note in english_notes %}
+            {% include note-card.html note=note %}
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="notes-panel">
+        <p class="section-title">In Portuguese</p>
+        <div class="notes-list">
+          {% for note in portuguese_notes %}
+            {% include note-card.html note=note %}
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

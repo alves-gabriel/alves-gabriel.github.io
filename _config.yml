@@ -1,0 +1,46 @@
+title: Gabriel O. Alves
+description: Personal website of Gabriel Oliveira Alves.
+url: "https://alves-gabriel.github.io"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+  coding:
+    output: true
+    permalink: /coding/:path/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: coding
+    values:
+      layout: coding-post
+      nav_id: coding
+      mathjax: true
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+      nav_id: notes
+
+exclude:
+  - AGENTS.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache
+  - node_modules
+  - vendor

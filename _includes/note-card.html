@@ -1,0 +1,14 @@
+<article class="note-card">
+  <a class="note-cover-link" href="{{ include.note.pdf | relative_url }}">
+    <img class="notes_cover" src="{{ include.note.cover | relative_url }}" alt="{{ include.note.title }} cover">
+  </a>
+  <div class="note-card-body">
+    <h5><a href="{{ include.note.pdf | relative_url }}">{{ include.note.title }}</a></h5>
+    <div class="note-meta">
+      {% if include.note.year %}<span>{{ include.note.year }}</span>{% endif %}
+    </div>
+    {% if include.note.repository_url %}
+      <p class="note-repository">Link para o repositório: <a class="std" href="{{ include.note.repository_url }}">GitHub</a></p>
+    {% endif %}
+  </div>
+</article>

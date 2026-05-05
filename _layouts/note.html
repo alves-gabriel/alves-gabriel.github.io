@@ -1,0 +1,30 @@
+---
+layout: page
+---
+<article class="note-detail">
+  <a class="back-link" href="{{ '/notes.html' | relative_url }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to notes</a>
+  <h1><b>{{ page.title }}</b></h1>
+  <hr>
+  <div class="note-detail-grid">
+    <img class="note-detail-cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover">
+    <div>
+      {% if page.description %}
+        <p>{{ page.description }}</p>
+      {% endif %}
+      <dl class="note-detail-meta">
+        {% if page.year %}
+          <dt>Year</dt>
+          <dd>{{ page.year }}</dd>
+        {% endif %}
+        {% if page.language %}
+          <dt>Language</dt>
+          <dd>{% if page.language == "pt" %}Portuguese{% else %}English{% endif %}</dd>
+        {% endif %}
+      </dl>
+      {% if page.repository_url %}
+        <p>Link para o repositório: <a class="std" href="{{ page.repository_url }}">GitHub</a></p>
+      {% endif %}
+      <p><a class="note-download" href="{{ page.pdf | relative_url }}">Open PDF</a></p>
+    </div>
+  </div>
+</article>

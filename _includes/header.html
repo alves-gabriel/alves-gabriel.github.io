@@ -1,0 +1,16 @@
+<nav class="site-nav" aria-label="Main navigation">
+  <input type="checkbox" id="check">
+  <label for="check" class="check_button" aria-label="Toggle navigation">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </label>
+
+  <ul class="menu">
+    {% for item in site.data.navigation %}
+      <li id="nav_{{ item.id }}">
+        <a href="{{ item.url | relative_url }}" {% if page.nav_id == item.id %}aria-current="page"{% endif %}>
+          <i class="{{ item.icon }}" aria-hidden="true"></i> {{ item.label }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

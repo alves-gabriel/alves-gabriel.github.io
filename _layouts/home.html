@@ -1,0 +1,13 @@
+---
+layout: page
+---
+{{ content }}
+
+<h1><b>News</b></h1>
+<hr>
+<dl>
+  {% for item in site.data.news %}
+    <dt>&#128204; {{ item.date }}</dt>
+    <dd>{{ item.html }}</dd>
+  {% endfor %}
+</dl>

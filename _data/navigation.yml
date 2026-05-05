@@ -1,0 +1,20 @@
+- id: home
+  label: Home
+  url: /
+  icon: fas fa-home
+- id: research
+  label: Research
+  url: /research.html
+  icon: fas fa-rocket
+- id: presentations
+  label: Talks
+  url: /talks.html
+  icon: fas fa-comment
+- id: notes
+  label: Notes
+  url: /notes.html
+  icon: fas fa-pencil-alt
+- id: coding
+  label: Code
+  url: /coding.html
+  icon: fas fa-code
