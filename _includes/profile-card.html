@@ -1,7 +1,11 @@
 <aside class="profile-card">
+  {% if include.image_placeholder %}
+  <div class="profile-pic profile-image-placeholder center" aria-hidden="true"></div>
+  {% else %}
   <a class="profile-image-link" href="{{ '/' | relative_url }}">
     <img src="{{ '/staticfiles/images/eu.jpg' | relative_url }}" alt="Gabriel O. Alves" class="profile-pic center">
   </a>
+  {% endif %}
   <div class="profile-rule"></div>
   <h3><a href="{{ '/' | relative_url }}">Gabriel O. Alves</a></h3>
   <p class="profile-role">PhD student at the MPI-PKS</p>

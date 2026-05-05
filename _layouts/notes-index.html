@@ -3,8 +3,13 @@ layout: default
 ---
 <div class="container">
   <div class="row">
-    <div class="col-md-3 layout-side-column notes-side-spacer" aria-hidden="true"></div>
+    <div class="col-md-3 profile-column">
+      {% include profile-card.html image_placeholder=true %}
+    </div>
     <div class="col-md-9 content-column">
+      <div id="presentation_card_mobile">
+        {% include profile-card.html image_placeholder=true %}
+      </div>
       {{ content }}
 
       {% assign english_notes = site.notes | where: "language", "en" | sort: "order" %}
