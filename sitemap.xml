@@ -5,27 +5,36 @@ permalink: /sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>{{ '/' | absolute_url }}</loc>
+    <loc>{{ '/' | absolute_url | xml_escape }}</loc>
   </url>
-  {% assign html_pages = site.pages | where_exp: "page", "page.url != '/sitemap.xml'" %}
-  {% for page in html_pages %}
-    {% unless page.url == '/' or page.url == '/robots.txt' or page.url contains '/assets/' or page.url contains '/staticfiles/' %}
+  {%- assign html_pages = site.pages | where_exp: "page", "page.url != '/sitemap.xml'" -%}
+  {%- for page in html_pages -%}
+    {%- unless page.url == '/' or page.url == '/robots.txt' or page.url contains '/assets/' or page.url contains '/staticfiles/' %}
   <url>
-    <loc>{{ page.url | absolute_url }}</loc>
+    <loc>{{ page.url | absolute_url | xml_escape }}</loc>
   </url>
-    {% endunless %}
-  {% endfor %}
-  {% for note in site.notes %}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- for note in site.notes %}
   <url>
-    <loc>{{ note.url | absolute_url }}</loc>
+    <loc>{{ note.url | absolute_url | xml_escape }}</loc>
   </url>
   <url>
-    <loc>{{ note.pdf | absolute_url }}</loc>
+    <loc>{{ note.pdf | absolute_url | xml_escape }}</loc>
   </url>
-  {% endfor %}
-  {% for item in site.coding %}
+  {%- endfor -%}
+  {%- for item in site.coding %}
   <url>
-    <loc>{{ item.url | absolute_url }}</loc>
+    <loc>{{ item.url | absolute_url | xml_escape }}</loc>
   </url>
-  {% endfor %}
+  {%- endfor -%}
+  {%- for file in site.static_files -%}
+    {%- if file.path contains '/assets/talks/' -%}
+      {%- if file.extname == '.pdf' or file.extname == '.pptx' %}
+  <url>
+    <loc>{{ file.path | absolute_url | xml_escape }}</loc>
+  </url>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor %}
 </urlset>
